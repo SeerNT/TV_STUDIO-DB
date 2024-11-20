@@ -220,8 +220,6 @@
             this.videomaterialDataGridView.Name = "videomaterialDataGridView";
             this.videomaterialDataGridView.Size = new System.Drawing.Size(453, 254);
             this.videomaterialDataGridView.TabIndex = 1;
-            this.videomaterialDataGridView.CurrentCellChanged += new System.EventHandler(this.videomaterialDataGridView_CurrentCellChanged);
-            this.videomaterialDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.videomaterialDataGridView_UserAddedRow);
             // 
             // Idea_description
             // 

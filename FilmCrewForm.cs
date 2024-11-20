@@ -34,6 +34,11 @@ namespace БД_Телестудии
 
         }
 
+        public void UpdateTable()
+        {
+            this.videomaterialTableAdapter.Fill(this.DB_TVStudioDataSet.Videomaterial);
+        }
+
         private void FilmCrewForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
@@ -46,16 +51,6 @@ namespace БД_Телестудии
         private void FilmCrewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void videomaterialDataGridView_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            
-        }
-
-        private void videomaterialDataGridView_CurrentCellChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,19 +82,17 @@ namespace БД_Телестудии
 
         private void addVideoButton_Click(object sender, EventArgs e)
         {
-            if(fileComment != null)
+            if(videoDescTextBox.Text != null)
             {
                 lastVideomaterialID++;
-                videomaterialTableAdapter.Insert((short)(lastVideomaterialID), fileComment, fileDate);
+                videomaterialTableAdapter.Insert((short)(lastVideomaterialID), videoDescTextBox.Text, fileDate);
                 MessageBox.Show("Видеоматериал добавлен",
                     "Успешно", MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                );
             }
 
-            this.Validate();
-            this.videomaterialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(DB_TVStudioDataSet);
+            UpdateTable();
         }
     }
 }
