@@ -13,9 +13,12 @@ namespace БД_Телестудии
 {
     public partial class NewUserForm : Form
     {
-        public NewUserForm()
+        private UserManagementForm manageForm;
+
+        public NewUserForm(UserManagementForm manageForm)
         {
             InitializeComponent();
+            this.manageForm = manageForm;
         }
 
         private void addNewUserButton_Click(object sender, EventArgs e)
@@ -60,6 +63,9 @@ namespace БД_Телестудии
                     "Успешно", MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
+
+                    manageForm.UpdateTable();
+
                     this.Close();
                 }
                 else

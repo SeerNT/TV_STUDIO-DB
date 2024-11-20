@@ -35,6 +35,7 @@
             this.eventTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.EventTableAdapter();
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
             this.eventBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.addButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +59,6 @@
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GetBroadcastAndVideoIDByTitleCommand = new System.Data.SqlClient.SqlCommand();
             this.AddEventButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingNavigator)).BeginInit();
@@ -123,6 +123,15 @@
             this.eventBindingNavigator.TabIndex = 17;
             this.eventBindingNavigator.Text = "bindingNavigator1";
             this.eventBindingNavigator.Click += new System.EventHandler(this.eventBindingNavigator_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
+            this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(23, 22);
+            this.addButton.Text = "Добавить событие";
             // 
             // bindingNavigatorCountItem
             // 
@@ -315,15 +324,6 @@
             this.AddEventButton.UseVisualStyleBackColor = true;
             this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
             // 
-            // addButton
-            // 
-            this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
-            this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(23, 22);
-            this.addButton.Text = "Добавить событие";
-            // 
             // VideoEditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +339,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VideoEditingForm";
-            this.Text = "VideoEditingForm";
+            this.Text = "Монтаж";
             this.Load += new System.EventHandler(this.VideoEditingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();

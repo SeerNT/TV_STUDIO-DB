@@ -21,14 +21,14 @@ namespace БД_Телестудии
             InitializeComponent();
         }
 
-        private void UserManagementForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
         private void UserManagementForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Auth". При необходимости она может быть перемещена или удалена.
+            this.authTableAdapter.Fill(this.бД_ТелестудииDataSet.Auth);
+        }
+
+        public void UpdateTable()
+        {
             this.authTableAdapter.Fill(this.бД_ТелестудииDataSet.Auth);
         }
 
@@ -37,7 +37,7 @@ namespace БД_Телестудии
             if (newUserForm != null)
                 newUserForm.Close();
 
-            newUserForm = new NewUserForm();
+            newUserForm = new NewUserForm(this);
             newUserForm.Show();
         }
 
@@ -55,7 +55,7 @@ namespace БД_Телестудии
             if (changeUserRoleForm != null)
                 changeUserRoleForm.Close();
 
-            changeUserRoleForm = new ChangeUserRoleForm();
+            changeUserRoleForm = new ChangeUserRoleForm(this);
             changeUserRoleForm.Show();
         }
 

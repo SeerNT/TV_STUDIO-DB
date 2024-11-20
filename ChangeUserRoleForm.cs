@@ -13,9 +13,12 @@ namespace БД_Телестудии
 {
     public partial class ChangeUserRoleForm : Form
     {
-        public ChangeUserRoleForm()
+        private UserManagementForm manageForm;
+
+        public ChangeUserRoleForm(UserManagementForm manageForm)
         {
             InitializeComponent();
+            this.manageForm = manageForm;
         }
 
         private void changeUserRoleButton_Click(object sender, EventArgs e)
@@ -58,6 +61,9 @@ namespace БД_Телестудии
                     "Успешно", MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
+
+                    manageForm.UpdateTable();
+
                     this.Close();
                 }
                 else
