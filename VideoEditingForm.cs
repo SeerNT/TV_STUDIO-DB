@@ -47,8 +47,6 @@ namespace БД_Телестудии
 
             eventBindingSource.Filter = "ID_Broadcast = " + broadcastID;
 
-            //DataGridRow row = eventBindingSource.ro;
-            //Console.WriteLine(row.Row[0].ToString());
             sqlConnection1.Close();
             
             broadcastTitleLabel.Text = BroadcastPlaybackPlanForm.currentVideomaterialName;
@@ -62,13 +60,18 @@ namespace БД_Телестудии
 
         }
 
-        private void AddEventButton_Click(object sender, EventArgs e)
+        private void OpenAddEventForm()
         {
             if (newEventForm != null)
                 newEventForm.Close();
 
-            newEventForm = new NewEvent();
+            newEventForm = new NewEvent(this);
             newEventForm.Show();
+        }
+
+        private void AddEventButton_Click(object sender, EventArgs e)
+        {
+            OpenAddEventForm();
         }
 
         private void eventDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -84,6 +87,11 @@ namespace БД_Телестудии
                 editEventForm = new EditEvent(this);
                 editEventForm.Show();
             }
+        }
+
+        private void eventBindingNavigator_Click(object sender, EventArgs e)
+        {
+            OpenAddEventForm();
         }
     }
 }

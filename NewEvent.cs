@@ -12,9 +12,12 @@ namespace БД_Телестудии
 {
     public partial class NewEvent : Form
     {
-        public NewEvent()
+        private VideoEditingForm editForm;
+
+        public NewEvent(VideoEditingForm editForm)
         {
             InitializeComponent();
+            this.editForm = editForm;
         }
 
         private void NewEvent_Load(object sender, EventArgs e)
@@ -24,6 +27,97 @@ namespace БД_Телестудии
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
             this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
 
+        }
+
+        private void addEventButton_Click(object sender, EventArgs e)
+        {
+            if ((transitionTypeComboBox.SelectedItem == null || transitionTypeComboBox.SelectedIndex == 4)
+                            && (transitionDurationUpDown.Value != 0 || transitionDelayUpDown.Value != 0))
+            {
+                MessageBox.Show("Длительность и задержка перехода не может быть задана без вида перехода",
+                        "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
+            }
+            else
+            {
+                AddNewEventCommand.Parameters["@broadcastID"].Value = editForm.broadcastID;
+
+                AddNewEventCommand.Parameters["@videoID"].Value = editForm.videoID;
+
+                TimeSpan ts = TimeSpan.FromSeconds(startTimePicker.Value.Second
+                    + startTimePicker.Value.Minute * 60 + startTimePicker.Value.Hour * 60 * 60);
+
+                AddNewEventCommand.Parameters["@startTime"].Value = ts;
+                AddNewEventCommand.Parameters["@duration"].Value = durationUpDown.Value;
+
+
+                if (transitionTypeComboBox.SelectedItem != null &&
+                    transitionTypeComboBox.SelectedItem.ToString() != "Нет")
+                {
+                    AddNewEventCommand.Parameters["@transitionType"].Value =
+                        transitionTypeComboBox.SelectedItem.ToString();
+
+                    AddNewEventCommand.Parameters["@transitionDuration"].Value =
+                        transitionDurationUpDown.Value;
+                    AddNewEventCommand.Parameters["@transitionDelay"].Value =
+                        transitionDelayUpDown.Value;
+                }
+                else
+                {
+                    AddNewEventCommand.Parameters["@transitionType"].Value =
+                        DBNull.Value;
+                    AddNewEventCommand.Parameters["@transitionDuration"].Value =
+                        DBNull.Value;
+                    AddNewEventCommand.Parameters["@transitionDelay"].Value =
+                        DBNull.Value;
+                }
+
+                if (descriptionTextBox.Text != "")
+                {
+                    AddNewEventCommand.Parameters["@description"].Value =
+                        descriptionTextBox.Text;
+                }
+                else
+                {
+                    AddNewEventCommand.Parameters["@description"].Value =
+                        DBNull.Value;
+                }
+
+                if (recSourceTextBox.Text != "")
+                {
+                    AddNewEventCommand.Parameters["@recSource"].Value =
+                        recSourceTextBox.Text;
+                }
+                else
+                {
+                    AddNewEventCommand.Parameters["@recSource"].Value =
+                       DBNull.Value;
+                }
+
+                sqlConnection1.Open();
+
+                AddNewEventCommand.ExecuteNonQuery();
+
+                sqlConnection1.Close();
+
+                MessageBox.Show("Событие было добавлено",
+                        "Успешно", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
+
+                editForm.UpdateTable();
+                this.Close();
+            }
+        }
+
+        private void transitionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (transitionTypeComboBox.SelectedIndex == 4)
+            {
+                transitionDurationUpDown.Value = 0;
+                transitionDelayUpDown.Value = 0;
+            }
         }
     }
 }

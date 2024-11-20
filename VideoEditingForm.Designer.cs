@@ -58,6 +58,7 @@
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GetBroadcastAndVideoIDByTitleCommand = new System.Data.SqlClient.SqlCommand();
             this.AddEventButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingNavigator)).BeginInit();
@@ -94,7 +95,7 @@
             // 
             // eventBindingNavigator
             // 
-            this.eventBindingNavigator.AddNewItem = null;
+            this.eventBindingNavigator.AddNewItem = this.addButton;
             this.eventBindingNavigator.BindingSource = this.eventBindingSource;
             this.eventBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.eventBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -109,7 +110,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorDeleteItem,
-            this.eventBindingNavigatorSaveItem});
+            this.eventBindingNavigatorSaveItem,
+            this.addButton});
             this.eventBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.eventBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.eventBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -120,6 +122,7 @@
             this.eventBindingNavigator.Size = new System.Drawing.Size(913, 25);
             this.eventBindingNavigator.TabIndex = 17;
             this.eventBindingNavigator.Text = "bindingNavigator1";
+            this.eventBindingNavigator.Click += new System.EventHandler(this.eventBindingNavigator_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -221,7 +224,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.eventDataGridView.DataSource = this.eventBindingSource;
-            this.eventDataGridView.Location = new System.Drawing.Point(8, 164);
+            this.eventDataGridView.Location = new System.Drawing.Point(12, 73);
             this.eventDataGridView.Name = "eventDataGridView";
             this.eventDataGridView.Size = new System.Drawing.Size(896, 408);
             this.eventDataGridView.TabIndex = 17;
@@ -303,20 +306,30 @@
             // 
             // AddEventButton
             // 
-            this.AddEventButton.Location = new System.Drawing.Point(241, 102);
+            this.AddEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEventButton.Location = new System.Drawing.Point(15, 495);
             this.AddEventButton.Name = "AddEventButton";
-            this.AddEventButton.Size = new System.Drawing.Size(75, 23);
+            this.AddEventButton.Size = new System.Drawing.Size(158, 53);
             this.AddEventButton.TabIndex = 19;
-            this.AddEventButton.Text = "button1";
+            this.AddEventButton.Text = "Добавить новое событие";
             this.AddEventButton.UseVisualStyleBackColor = true;
             this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
+            this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(23, 22);
+            this.addButton.Text = "Добавить событие";
             // 
             // VideoEditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(913, 592);
+            this.ClientSize = new System.Drawing.Size(913, 560);
             this.Controls.Add(this.AddEventButton);
             this.Controls.Add(this.broadcastTitleLabel);
             this.Controls.Add(this.eventDataGridView);
@@ -368,5 +381,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Button AddEventButton;
+        private System.Windows.Forms.ToolStripButton addButton;
     }
 }

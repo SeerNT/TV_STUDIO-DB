@@ -76,7 +76,6 @@ namespace БД_Телестудии
 
         private void editEventButton_Click(object sender, EventArgs e)
         {
-            
             if((transitionTypeComboBox.SelectedItem == null || transitionTypeComboBox.SelectedIndex == 4) 
                 && (transitionDurationUpDown.Value != 0 || transitionDelayUpDown.Value != 0))
             {
