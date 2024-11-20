@@ -1,0 +1,32 @@
+K:\Проекты\VS Projects\БД Телестудии\bin\Debug\БД Телестудии.exe.config
+K:\Проекты\VS Projects\БД Телестудии\bin\Debug\БД Телестудии.exe
+K:\Проекты\VS Projects\БД Телестудии\bin\Debug\БД Телестудии.pdb
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.csproj.AssemblyReference.cache
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.Properties.Resources.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.RoundControl.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.csproj.GenerateResource.cache
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.csproj.CoreCompileInputs.cache
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.exe
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.pdb
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.RoundTextBox.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.Authorization.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.RoundButton.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.FilmCrewForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\Interop.Shell32.dll
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД Телестудии.csproj.ResolveComReference.cache
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.BroadcastPlaybackPlanForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.VideoEditingForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.CreationStageForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.Director_BroadcastPlaybackPlanForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.ManagerMainForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.VideomaterialsForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.UserManagementForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.NewUserForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.ChangeUserPassForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.ChangeUserRoleForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.Manager_BroadcastPlaybackPlanForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.EditorProgressForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.DirectorEditingForm.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.NewEvent.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.EditEvent.resources
+K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.VideomaterialProperty.resources
