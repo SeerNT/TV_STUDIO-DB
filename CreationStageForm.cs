@@ -27,6 +27,11 @@ namespace БД_Телестудии
 
         }
 
+        public void UpdateTable()
+        {
+            this.creation_StageTableAdapter.Fill(this.бД_ТелестудииDataSet.Creation_Stage);
+        }
+
         private void CreationStageForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
@@ -71,6 +76,8 @@ namespace БД_Телестудии
                     "Успешно", MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
+
+                UpdateTable();
             }
             else
             {
