@@ -57,6 +57,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.broadcastsPlaybackPlanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,8 +100,8 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.videomaterialBindingSource1;
-            this.comboBox1.DisplayMember = "Idea_description";
+            this.comboBox1.DataSource = this.broadcastsPlaybackPlanBindingSource1;
+            this.comboBox1.DisplayMember = "Трансляция";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
@@ -107,7 +109,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(529, 24);
             this.comboBox1.TabIndex = 11;
-            this.comboBox1.ValueMember = "Idea_description";
+            this.comboBox1.ValueMember = "Трансляция";
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // videomaterialBindingSource1
@@ -308,6 +310,11 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 160;
             // 
+            // broadcastsPlaybackPlanBindingSource1
+            // 
+            this.broadcastsPlaybackPlanBindingSource1.DataMember = "BroadcastsPlaybackPlan";
+            this.broadcastsPlaybackPlanBindingSource1.DataSource = this.бД_ТелестудииDataSet;
+            // 
             // Director_BroadcastPlaybackPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,5 +379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource broadcastsPlaybackPlanBindingSource1;
     }
 }

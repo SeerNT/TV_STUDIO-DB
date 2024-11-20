@@ -34,6 +34,14 @@ namespace БД_Телестудии
             broadcastsPlaybackPlan_DetailedDataGridView.Visible = true;
         }
 
+        public void UpdateTable()
+        {
+            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
+            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
+            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
+        }
 
         private void BroadcastPlaybackPlanForm_Load(object sender, EventArgs e)
         {
@@ -56,7 +64,7 @@ namespace БД_Телестудии
             if (directorEditingForm != null)
                 directorEditingForm.Close();
 
-            directorEditingForm = new DirectorEditingForm();
+            directorEditingForm = new DirectorEditingForm(this);
             directorEditingForm.Show();
         }
 

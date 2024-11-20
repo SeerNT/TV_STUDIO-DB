@@ -46,7 +46,7 @@ namespace БД_Телестудии
             {
                 Program.creationStageForm = new CreationStageForm();
                 Program.creationStageForm.Show();
-
+                
                 Program.openForms.Add(Program.creationStageForm);
             }
             else if (role == "director")

@@ -96,7 +96,6 @@ namespace БД_Телестудии
                 ChangeEventCommand.Parameters["@startTime"].Value = ts;
                 ChangeEventCommand.Parameters["@duration"].Value = durationUpDown.Value;
 
-
                 if (transitionTypeComboBox.SelectedItem != null &&
                     transitionTypeComboBox.SelectedItem.ToString() != "Нет")
                 {

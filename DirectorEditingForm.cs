@@ -13,9 +13,12 @@ namespace БД_Телестудии
 {
     public partial class DirectorEditingForm : Form
     {
-        public DirectorEditingForm()
+        private Director_BroadcastPlaybackPlanForm dirForm;
+
+        public DirectorEditingForm(Director_BroadcastPlaybackPlanForm dirForm)
         {
             InitializeComponent();
+            this.dirForm = dirForm;
         }
 
         private void categoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -68,6 +71,9 @@ namespace БД_Телестудии
                 "Успешно", MessageBoxButtons.OK,
                 MessageBoxIcon.Information
                 );
+
+                dirForm.UpdateTable();
+
                 this.Close();
             }
         }
