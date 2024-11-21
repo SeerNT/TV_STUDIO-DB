@@ -111,7 +111,7 @@
             this.durationUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationUpDown.Location = new System.Drawing.Point(217, 190);
             this.durationUpDown.Maximum = new decimal(new int[] {
-            14400,
+            864000,
             0,
             0,
             0});
@@ -281,9 +281,9 @@
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(215, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 18);
+            this.label4.Size = new System.Drawing.Size(139, 18);
             this.label4.TabIndex = 58;
-            this.label4.Text = "Длительность (мин)";
+            this.label4.Text = "Длительность (сек)";
             // 
             // label3
             // 
