@@ -25,54 +25,29 @@ namespace БД_Телестудии
             InitializeComponent();
         }
 
-        private void ShowBroadcastsPlan()
+        public void UpdateTable()
         {
-            broadcastsPlaybackPlanDataGridView.Visible = true;
-            broadcastsPlaybackPlan_DetailedDataGridView.Visible = false;
-        }
-
-        private void ShowBroadcastsPlan_Detailed()
-        {
-            broadcastsPlaybackPlanDataGridView.Visible = false;
-            broadcastsPlaybackPlan_DetailedDataGridView.Visible = true;
-        }
-
-
-        private void BroadcastPlaybackPlanForm_Load(object sender, EventArgs e)
-        {
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Video_Editing". При необходимости она может быть перемещена или удалена.
+            this.video_EditingTableAdapter.Fill(this.бД_ТелестудииDataSet.Video_Editing);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
             this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
             this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
+        }
 
-            ShowBroadcastsPlan();
+        private void BroadcastPlaybackPlanForm_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Video_Editing". При необходимости она может быть перемещена или удалена.
+            this.video_EditingTableAdapter.Fill(this.бД_ТелестудииDataSet.Video_Editing);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
+            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
+            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
         }
 
         private void BroadcastPlaybackPlanForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void editBroadcastButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void detailedTableCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
-            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
-
-            if (detailedTableCheckBox.Checked)
-            {
-                ShowBroadcastsPlan_Detailed();
-            }
-            else
-            {
-                ShowBroadcastsPlan();
-            }
         }
 
         private void openProgressButton_Click(object sender, EventArgs e)
@@ -95,21 +70,30 @@ namespace БД_Телестудии
 
         private void broadcastsPlaybackPlanDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            if(e.RowIndex != -1)
             {
-                broadcastID = int.Parse(broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                if (broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+                {
+                    broadcastID = int.Parse(broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[0].Value.ToString());
 
-                new VideoEditingForm(broadcastID).Show();
+                    new VideoEditingForm(broadcastID, this).Show();
+                }
             }
         }
 
-        private void broadcastsPlaybackPlan_DetailedDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void broadcastsPlaybackPlanDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (broadcastsPlaybackPlan_DetailedDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            if (e.RowIndex != -1)
             {
-                broadcastID = int.Parse(broadcastsPlaybackPlan_DetailedDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-
-                new VideoEditingForm(broadcastID).Show();
+                if (broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+                {
+                    broadcastID = int.Parse(broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[0].Value.ToString());
+                    
+                    video_EditingBindingSource.Filter = "ID_Editing = " +
+                        broadcastID;
+                } 
             }
         }
     }

@@ -12,7 +12,6 @@ namespace БД_Телестудии
 {
     public partial class VideoEditingForm : Form
     {
-        private DirectorEditingForm directorEditingForm;
         private NewEvent newEventForm;
         private EditEvent editEventForm;
         public int broadcastID;
@@ -20,16 +19,19 @@ namespace БД_Телестудии
         public int eventID;
         public TimeSpan baseTime;
         public int baseDuration;
+        public BroadcastPlaybackPlanForm mainForm;
 
 
-        public VideoEditingForm(int broadcastID)
+        public VideoEditingForm(int broadcastID, BroadcastPlaybackPlanForm mainForm)
         {
             InitializeComponent();
             this.broadcastID = broadcastID;
+            this.mainForm = mainForm;
         }
 
         public void UpdateTable()
         {
+            this.eventViewTableAdapter.Fill(this.бД_ТелестудииDataSet.EventView);
             this.eventTableAdapter.Fill(this.бД_ТелестудииDataSet.Event);
         }
 
@@ -70,17 +72,20 @@ namespace БД_Телестудии
 
         private void eventDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(eventDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            if(e.RowIndex != -1)
             {
-                eventID = int.Parse(eventViewDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-                baseTime = TimeSpan.Parse(eventDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-                baseDuration = (int)eventDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                if (eventDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+                {
+                    eventID = int.Parse(eventViewDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    baseTime = TimeSpan.Parse(eventDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    baseDuration = (int)eventDataGridView.Rows[e.RowIndex].Cells[1].Value;
 
-                if (editEventForm != null)
-                    editEventForm.Close();
+                    if (editEventForm != null)
+                        editEventForm.Close();
 
-                editEventForm = new EditEvent(this);
-                editEventForm.Show();
+                    editEventForm = new EditEvent(this);
+                    editEventForm.Show();
+                }
             }
         }
 

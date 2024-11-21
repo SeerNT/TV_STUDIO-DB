@@ -39,18 +39,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.channelTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.manager_BroadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Manager_BroadcastsPlaybackPlanTableAdapter();
+            this.broadcastBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.broadcastTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastTableAdapter();
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
-            this.manager_BroadcastsPlaybackPlanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.manager_BroadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.manager_BroadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Manager_BroadcastsPlaybackPlanTableAdapter();
             this.manager_BroadcastsPlaybackPlanDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.broadcastBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.groupBox1.Controls.Add(this.ascButton);
             this.groupBox1.Controls.Add(this.fieldListBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(669, 40);
+            this.groupBox1.Location = new System.Drawing.Point(562, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(206, 272);
             this.groupBox1.TabIndex = 19;
@@ -124,8 +126,7 @@
             "ID",
             "Категория",
             "Внешний канал",
-            "Дата воспроизведения",
-            "Длительность"});
+            "Дата воспроизведения"});
             this.fieldListBox.Location = new System.Drawing.Point(6, 51);
             this.fieldListBox.Name = "fieldListBox";
             this.fieldListBox.Size = new System.Drawing.Size(193, 95);
@@ -159,17 +160,21 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Внешний канал:";
             // 
-            // manager_BroadcastsPlaybackPlanTableAdapter
+            // broadcastBindingSource
             // 
-            this.manager_BroadcastsPlaybackPlanTableAdapter.ClearBeforeFill = true;
+            this.broadcastBindingSource.DataMember = "Broadcast";
+            this.broadcastBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            // 
+            // broadcastTableAdapter
+            // 
+            this.broadcastTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.AuthTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BroadcastTableAdapter = null;
+            this.tableAdapterManager.BroadcastTableAdapter = this.broadcastTableAdapter;
             this.tableAdapterManager.CategoryTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.Creation_StageTableAdapter = null;
             this.tableAdapterManager.EventTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -177,10 +182,14 @@
             this.tableAdapterManager.Videomaterial_UsageTableAdapter = null;
             this.tableAdapterManager.VideomaterialTableAdapter = null;
             // 
-            // manager_BroadcastsPlaybackPlanBindingSource1
+            // manager_BroadcastsPlaybackPlanBindingSource
             // 
-            this.manager_BroadcastsPlaybackPlanBindingSource1.DataMember = "Manager_BroadcastsPlaybackPlan";
-            this.manager_BroadcastsPlaybackPlanBindingSource1.DataSource = this.бД_ТелестудииDataSet;
+            this.manager_BroadcastsPlaybackPlanBindingSource.DataMember = "Manager_BroadcastsPlaybackPlan";
+            this.manager_BroadcastsPlaybackPlanBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            // 
+            // manager_BroadcastsPlaybackPlanTableAdapter
+            // 
+            this.manager_BroadcastsPlaybackPlanTableAdapter.ClearBeforeFill = true;
             // 
             // manager_BroadcastsPlaybackPlanDataGridView
             // 
@@ -190,14 +199,13 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.manager_BroadcastsPlaybackPlanDataGridView.DataSource = this.manager_BroadcastsPlaybackPlanBindingSource1;
+            this.dataGridViewTextBoxColumn6});
+            this.manager_BroadcastsPlaybackPlanDataGridView.DataSource = this.manager_BroadcastsPlaybackPlanBindingSource;
             this.manager_BroadcastsPlaybackPlanDataGridView.Location = new System.Drawing.Point(12, 40);
             this.manager_BroadcastsPlaybackPlanDataGridView.Name = "manager_BroadcastsPlaybackPlanDataGridView";
             this.manager_BroadcastsPlaybackPlanDataGridView.ReadOnly = true;
-            this.manager_BroadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(633, 235);
-            this.manager_BroadcastsPlaybackPlanDataGridView.TabIndex = 23;
+            this.manager_BroadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(533, 223);
+            this.manager_BroadcastsPlaybackPlanDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -211,6 +219,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Категория";
             this.dataGridViewTextBoxColumn3.HeaderText = "Категория";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 120;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -226,19 +235,12 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 160;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Длительность";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Длительность";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 120;
-            // 
             // Manager_BroadcastPlaybackPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(891, 320);
+            this.ClientSize = new System.Drawing.Size(782, 332);
             this.Controls.Add(this.manager_BroadcastsPlaybackPlanDataGridView);
             this.Controls.Add(this.channelTextBox);
             this.Controls.Add(this.label3);
@@ -253,7 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.broadcastBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manager_BroadcastsPlaybackPlanDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,14 +276,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox channelTextBox;
         private System.Windows.Forms.Label label3;
-        private БД_ТелестудииDataSetTableAdapters.Manager_BroadcastsPlaybackPlanTableAdapter manager_BroadcastsPlaybackPlanTableAdapter;
+        private System.Windows.Forms.BindingSource broadcastBindingSource;
+        private БД_ТелестудииDataSetTableAdapters.BroadcastTableAdapter broadcastTableAdapter;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource manager_BroadcastsPlaybackPlanBindingSource1;
+        private System.Windows.Forms.BindingSource manager_BroadcastsPlaybackPlanBindingSource;
+        private БД_ТелестудииDataSetTableAdapters.Manager_BroadcastsPlaybackPlanTableAdapter manager_BroadcastsPlaybackPlanTableAdapter;
         private System.Windows.Forms.DataGridView manager_BroadcastsPlaybackPlanDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

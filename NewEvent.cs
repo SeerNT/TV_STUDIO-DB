@@ -93,16 +93,18 @@ namespace БД_Телестудии
                        DBNull.Value;
                 }
 
-                UpdateVideoEditingSumDurationCommand.Parameters["@broadcastID"].Value = 
-                    editForm.broadcastID;
-                UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value = 0;
-
+                UpdateVideoEditingSumDurationCommand.Parameters["@broadcastID"].Value =
+                   editForm.broadcastID;
                 UpdateVideoEditingSumDurationCommand.Parameters["@eventID"].Value =
                    editForm.eventID;
 
                 sqlConnection1.Open();
 
                 AddNewEventCommand.ExecuteNonQuery();
+
+                UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value =
+                   editForm.broadcastID;
+
                 UpdateVideoEditingSumDurationCommand.ExecuteNonQuery();
 
                 sqlConnection1.Close();

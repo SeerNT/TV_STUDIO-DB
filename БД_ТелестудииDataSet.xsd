@@ -557,28 +557,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BroadcastsPlaybackPlan_DetailedTableAdapter" GeneratorDataComponentClassName="BroadcastsPlaybackPlan_DetailedTableAdapter" Name="BroadcastsPlaybackPlan_Detailed" UserDataComponentName="BroadcastsPlaybackPlan_DetailedTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.BroadcastsPlaybackPlan_Detailed" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Категория, [Внешний канал], [Дата воспроизведения], Длительность, [Частота кадров], Автор FROM dbo.BroadcastsPlaybackPlan_Detailed</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Категория" DataSetColumn="Категория" />
-              <Mapping SourceColumn="Внешний канал" DataSetColumn="Внешний канал" />
-              <Mapping SourceColumn="Дата воспроизведения" DataSetColumn="Дата воспроизведения" />
-              <Mapping SourceColumn="Длительность" DataSetColumn="Длительность" />
-              <Mapping SourceColumn="Частота кадров" DataSetColumn="Частота кадров" />
-              <Mapping SourceColumn="Автор" DataSetColumn="Автор" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Director_BroadcastsPlaybackPlanTableAdapter" GeneratorDataComponentClassName="Director_BroadcastsPlaybackPlanTableAdapter" Name="Director_BroadcastsPlaybackPlan" UserDataComponentName="Director_BroadcastsPlaybackPlanTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.Director_BroadcastsPlaybackPlan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -598,26 +576,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Manager_BroadcastsPlaybackPlanTableAdapter" GeneratorDataComponentClassName="Manager_BroadcastsPlaybackPlanTableAdapter" Name="Manager_BroadcastsPlaybackPlan" UserDataComponentName="Manager_BroadcastsPlaybackPlanTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.Manager_BroadcastsPlaybackPlan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Категория, [Внешний канал], [Дата воспроизведения], Длительность FROM dbo.Manager_BroadcastsPlaybackPlan</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Категория" DataSetColumn="Категория" />
-              <Mapping SourceColumn="Внешний канал" DataSetColumn="Внешний канал" />
-              <Mapping SourceColumn="Дата воспроизведения" DataSetColumn="Дата воспроизведения" />
-              <Mapping SourceColumn="Длительность" DataSetColumn="Длительность" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VideoPropsTableAdapter" GeneratorDataComponentClassName="VideoPropsTableAdapter" Name="VideoProps" UserDataComponentName="VideoPropsTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.VideoProps" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -633,6 +591,25 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
               <Mapping SourceColumn="Idea_description" DataSetColumn="Idea_description" />
               <Mapping SourceColumn="Framerate" DataSetColumn="Framerate" />
               <Mapping SourceColumn="Author" DataSetColumn="Author" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Manager_BroadcastsPlaybackPlanTableAdapter" GeneratorDataComponentClassName="Manager_BroadcastsPlaybackPlanTableAdapter" Name="Manager_BroadcastsPlaybackPlan" UserDataComponentName="Manager_BroadcastsPlaybackPlanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.Manager_BroadcastsPlaybackPlan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Категория, [Внешний канал], [Дата воспроизведения] FROM dbo.Manager_BroadcastsPlaybackPlan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Категория" DataSetColumn="Категория" />
+              <Mapping SourceColumn="Внешний канал" DataSetColumn="Внешний канал" />
+              <Mapping SourceColumn="Дата воспроизведения" DataSetColumn="Дата воспроизведения" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -910,37 +887,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BroadcastsPlaybackPlan_Detailed" msprop:Generator_RowEvHandlerName="BroadcastsPlaybackPlan_DetailedRowChangeEventHandler" msprop:Generator_RowDeletedName="BroadcastsPlaybackPlan_DetailedRowDeleted" msprop:Generator_RowDeletingName="BroadcastsPlaybackPlan_DetailedRowDeleting" msprop:Generator_RowEvArgName="BroadcastsPlaybackPlan_DetailedRowChangeEvent" msprop:Generator_TablePropName="BroadcastsPlaybackPlan_Detailed" msprop:Generator_RowChangedName="BroadcastsPlaybackPlan_DetailedRowChanged" msprop:Generator_UserTableName="BroadcastsPlaybackPlan_Detailed" msprop:Generator_RowChangingName="BroadcastsPlaybackPlan_DetailedRowChanging" msprop:Generator_RowClassName="BroadcastsPlaybackPlan_DetailedRow" msprop:Generator_TableClassName="BroadcastsPlaybackPlan_DetailedDataTable" msprop:Generator_TableVarName="tableBroadcastsPlaybackPlan_Detailed">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:short" />
-              <xs:element name="Категория" msprop:Generator_ColumnPropNameInTable="КатегорияColumn" msprop:Generator_ColumnPropNameInRow="Категория" msprop:Generator_UserColumnName="Категория" msprop:Generator_ColumnVarNameInTable="columnКатегория">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Внешний_x0020_канал" msprop:Generator_ColumnPropNameInTable="Внешний_каналColumn" msprop:Generator_ColumnPropNameInRow="Внешний_канал" msprop:Generator_UserColumnName="Внешний канал" msprop:Generator_ColumnVarNameInTable="columnВнешний_канал">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Дата_x0020_воспроизведения" msprop:Generator_ColumnPropNameInTable="Дата_воспроизведенияColumn" msprop:Generator_ColumnPropNameInRow="Дата_воспроизведения" msprop:Generator_UserColumnName="Дата воспроизведения" msprop:Generator_ColumnVarNameInTable="columnДата_воспроизведения" type="xs:dateTime" />
-              <xs:element name="Длительность" msprop:Generator_ColumnPropNameInTable="ДлительностьColumn" msprop:Generator_ColumnPropNameInRow="Длительность" msprop:Generator_UserColumnName="Длительность" msprop:Generator_ColumnVarNameInTable="columnДлительность" type="xs:int" />
-              <xs:element name="Частота_x0020_кадров" msprop:Generator_ColumnPropNameInTable="Частота_кадровColumn" msprop:Generator_ColumnPropNameInRow="Частота_кадров" msprop:Generator_UserColumnName="Частота кадров" msprop:Generator_ColumnVarNameInTable="columnЧастота_кадров" type="xs:short" />
-              <xs:element name="Автор" msprop:Generator_ColumnPropNameInTable="АвторColumn" msprop:Generator_ColumnPropNameInRow="Автор" msprop:Generator_UserColumnName="Автор" msprop:Generator_ColumnVarNameInTable="columnАвтор" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="Director_BroadcastsPlaybackPlan" msprop:Generator_RowEvHandlerName="Director_BroadcastsPlaybackPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="Director_BroadcastsPlaybackPlanRowDeleted" msprop:Generator_RowDeletingName="Director_BroadcastsPlaybackPlanRowDeleting" msprop:Generator_RowEvArgName="Director_BroadcastsPlaybackPlanRowChangeEvent" msprop:Generator_TablePropName="Director_BroadcastsPlaybackPlan" msprop:Generator_RowChangedName="Director_BroadcastsPlaybackPlanRowChanged" msprop:Generator_UserTableName="Director_BroadcastsPlaybackPlan" msprop:Generator_RowChangingName="Director_BroadcastsPlaybackPlanRowChanging" msprop:Generator_RowClassName="Director_BroadcastsPlaybackPlanRow" msprop:Generator_TableClassName="Director_BroadcastsPlaybackPlanDataTable" msprop:Generator_TableVarName="tableDirector_BroadcastsPlaybackPlan">
           <xs:complexType>
             <xs:sequence>
@@ -963,47 +909,46 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Manager_BroadcastsPlaybackPlan" msprop:Generator_RowClassName="Manager_BroadcastsPlaybackPlanRow" msprop:Generator_RowEvHandlerName="Manager_BroadcastsPlaybackPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="Manager_BroadcastsPlaybackPlanRowDeleted" msprop:Generator_RowDeletingName="Manager_BroadcastsPlaybackPlanRowDeleting" msprop:Generator_RowEvArgName="Manager_BroadcastsPlaybackPlanRowChangeEvent" msprop:Generator_TablePropName="Manager_BroadcastsPlaybackPlan" msprop:Generator_RowChangedName="Manager_BroadcastsPlaybackPlanRowChanged" msprop:Generator_UserTableName="Manager_BroadcastsPlaybackPlan" msprop:Generator_RowChangingName="Manager_BroadcastsPlaybackPlanRowChanging" msprop:Generator_TableClassName="Manager_BroadcastsPlaybackPlanDataTable" msprop:Generator_TableVarName="tableManager_BroadcastsPlaybackPlan">
+        <xs:element name="VideoProps" msprop:Generator_RowClassName="VideoPropsRow" msprop:Generator_RowEvHandlerName="VideoPropsRowChangeEventHandler" msprop:Generator_RowDeletedName="VideoPropsRowDeleted" msprop:Generator_RowDeletingName="VideoPropsRowDeleting" msprop:Generator_RowEvArgName="VideoPropsRowChangeEvent" msprop:Generator_TablePropName="VideoProps" msprop:Generator_RowChangedName="VideoPropsRowChanged" msprop:Generator_UserTableName="VideoProps" msprop:Generator_RowChangingName="VideoPropsRowChanging" msprop:Generator_TableClassName="VideoPropsDataTable" msprop:Generator_TableVarName="tableVideoProps">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:short" />
-              <xs:element name="Категория" msprop:Generator_UserColumnName="Категория" msprop:Generator_ColumnPropNameInTable="КатегорияColumn" msprop:Generator_ColumnPropNameInRow="Категория" msprop:Generator_ColumnVarNameInTable="columnКатегория">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Внешний_x0020_канал" msprop:Generator_UserColumnName="Внешний канал" msprop:Generator_ColumnPropNameInTable="Внешний_каналColumn" msprop:Generator_ColumnPropNameInRow="Внешний_канал" msprop:Generator_ColumnVarNameInTable="columnВнешний_канал">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Дата_x0020_воспроизведения" msprop:Generator_UserColumnName="Дата воспроизведения" msprop:Generator_ColumnPropNameInTable="Дата_воспроизведенияColumn" msprop:Generator_ColumnPropNameInRow="Дата_воспроизведения" msprop:Generator_ColumnVarNameInTable="columnДата_воспроизведения" type="xs:dateTime" />
-              <xs:element name="Длительность" msprop:Generator_UserColumnName="Длительность" msprop:Generator_ColumnPropNameInTable="ДлительностьColumn" msprop:Generator_ColumnPropNameInRow="Длительность" msprop:Generator_ColumnVarNameInTable="columnДлительность" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="VideoProps" msprop:Generator_RowEvHandlerName="VideoPropsRowChangeEventHandler" msprop:Generator_RowDeletedName="VideoPropsRowDeleted" msprop:Generator_RowDeletingName="VideoPropsRowDeleting" msprop:Generator_RowEvArgName="VideoPropsRowChangeEvent" msprop:Generator_TablePropName="VideoProps" msprop:Generator_RowChangedName="VideoPropsRowChanged" msprop:Generator_RowChangingName="VideoPropsRowChanging" msprop:Generator_TableClassName="VideoPropsDataTable" msprop:Generator_RowClassName="VideoPropsRow" msprop:Generator_TableVarName="tableVideoProps" msprop:Generator_UserTableName="VideoProps">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Idea_description" msprop:Generator_ColumnPropNameInRow="Idea_description" msprop:Generator_ColumnPropNameInTable="Idea_descriptionColumn" msprop:Generator_ColumnVarNameInTable="columnIdea_description" msprop:Generator_UserColumnName="Idea_description">
+              <xs:element name="Idea_description" msprop:Generator_UserColumnName="Idea_description" msprop:Generator_ColumnPropNameInTable="Idea_descriptionColumn" msprop:Generator_ColumnPropNameInRow="Idea_description" msprop:Generator_ColumnVarNameInTable="columnIdea_description">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="125" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Framerate" msprop:Generator_ColumnPropNameInRow="Framerate" msprop:Generator_ColumnPropNameInTable="FramerateColumn" msprop:Generator_ColumnVarNameInTable="columnFramerate" msprop:Generator_UserColumnName="Framerate" type="xs:short" />
-              <xs:element name="Author" msprop:Generator_ColumnPropNameInRow="Author" msprop:Generator_ColumnPropNameInTable="AuthorColumn" msprop:Generator_ColumnVarNameInTable="columnAuthor" msprop:Generator_UserColumnName="Author" minOccurs="0">
+              <xs:element name="Framerate" msprop:Generator_UserColumnName="Framerate" msprop:Generator_ColumnPropNameInTable="FramerateColumn" msprop:Generator_ColumnPropNameInRow="Framerate" msprop:Generator_ColumnVarNameInTable="columnFramerate" type="xs:short" />
+              <xs:element name="Author" msprop:Generator_UserColumnName="Author" msprop:Generator_ColumnPropNameInTable="AuthorColumn" msprop:Generator_ColumnPropNameInRow="Author" msprop:Generator_ColumnVarNameInTable="columnAuthor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Manager_BroadcastsPlaybackPlan" msprop:Generator_RowEvHandlerName="Manager_BroadcastsPlaybackPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="Manager_BroadcastsPlaybackPlanRowDeleted" msprop:Generator_RowDeletingName="Manager_BroadcastsPlaybackPlanRowDeleting" msprop:Generator_RowEvArgName="Manager_BroadcastsPlaybackPlanRowChangeEvent" msprop:Generator_TablePropName="Manager_BroadcastsPlaybackPlan" msprop:Generator_RowChangedName="Manager_BroadcastsPlaybackPlanRowChanged" msprop:Generator_RowChangingName="Manager_BroadcastsPlaybackPlanRowChanging" msprop:Generator_TableClassName="Manager_BroadcastsPlaybackPlanDataTable" msprop:Generator_RowClassName="Manager_BroadcastsPlaybackPlanRow" msprop:Generator_TableVarName="tableManager_BroadcastsPlaybackPlan" msprop:Generator_UserTableName="Manager_BroadcastsPlaybackPlan">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:short" />
+              <xs:element name="Категория" msprop:Generator_ColumnPropNameInRow="Категория" msprop:Generator_ColumnPropNameInTable="КатегорияColumn" msprop:Generator_ColumnVarNameInTable="columnКатегория" msprop:Generator_UserColumnName="Категория">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Внешний_x0020_канал" msprop:Generator_ColumnPropNameInRow="Внешний_канал" msprop:Generator_ColumnPropNameInTable="Внешний_каналColumn" msprop:Generator_ColumnVarNameInTable="columnВнешний_канал" msprop:Generator_UserColumnName="Внешний канал">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_воспроизведения" msprop:Generator_ColumnPropNameInRow="Дата_воспроизведения" msprop:Generator_ColumnPropNameInTable="Дата_воспроизведенияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_воспроизведения" msprop:Generator_UserColumnName="Дата воспроизведения" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1050,10 +995,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
       <xs:selector xpath=".//mstns:BroadcastsPlaybackPlan" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="BroadcastsPlaybackPlan_Detailed_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:BroadcastsPlaybackPlan_Detailed" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
     <xs:unique name="Director_BroadcastsPlaybackPlan_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Director_BroadcastsPlaybackPlan" />
       <xs:field xpath="mstns:ID" />
@@ -1065,12 +1006,12 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Broadcast__ID_Ca__32AB8735" msdata:parent="Category" msdata:child="Broadcast" msdata:parentkey="ID_Category" msdata:childkey="ID_Category" msprop:Generator_UserParentTable="Category" msprop:Generator_UserChildTable="Broadcast" msprop:Generator_RelationVarName="relationFK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ChildPropName="GetBroadcastRows" msprop:Generator_UserRelationName="FK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ParentPropName="CategoryRow" />
-      <msdata:Relationship name="FK__Creation___ID_Vi__2645B050" msdata:parent="Videomaterial" msdata:child="Creation_Stage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Creation_Stage" msprop:Generator_RelationVarName="relationFK__Creation___ID_Vi__2645B050" msprop:Generator_ChildPropName="GetCreation_StageRows" msprop:Generator_UserRelationName="FK__Creation___ID_Vi__2645B050" msprop:Generator_ParentPropName="VideomaterialRow" />
-      <msdata:Relationship name="FK__Event__ID_Broadc__3E1D39E1" msdata:parent="Broadcast" msdata:child="Event" msdata:parentkey="ID_Broadcast" msdata:childkey="ID_Broadcast" msprop:Generator_UserParentTable="Broadcast" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_ParentPropName="BroadcastRow" msprop:Generator_UserRelationName="FK__Event__ID_Broadc__3E1D39E1" />
-      <msdata:Relationship name="FK__Event__ID_Videom__3F115E1A" msdata:parent="Videomaterial" msdata:child="Event" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Videom__3F115E1A" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_UserRelationName="FK__Event__ID_Videom__3F115E1A" msprop:Generator_ParentPropName="VideomaterialRow" />
-      <msdata:Relationship name="FK__Videomate__ID_Ed__2FCF1A8A" msdata:parent="Video_Editing" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Editing" msdata:childkey="ID_Editing" msprop:Generator_UserParentTable="Video_Editing" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_ParentPropName="Video_EditingRow" msprop:Generator_UserRelationName="FK__Videomate__ID_Ed__2FCF1A8A" />
-      <msdata:Relationship name="FK__Videomate__ID_Vi__2EDAF651" msdata:parent="Videomaterial" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Videomate__ID_Vi__2EDAF651" />
+      <msdata:Relationship name="FK__Broadcast__ID_Ca__32AB8735" msdata:parent="Category" msdata:child="Broadcast" msdata:parentkey="ID_Category" msdata:childkey="ID_Category" msprop:Generator_UserParentTable="Category" msprop:Generator_UserChildTable="Broadcast" msprop:Generator_RelationVarName="relationFK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ChildPropName="GetBroadcastRows" msprop:Generator_ParentPropName="CategoryRow" msprop:Generator_UserRelationName="FK__Broadcast__ID_Ca__32AB8735" />
+      <msdata:Relationship name="FK__Creation___ID_Vi__2645B050" msdata:parent="Videomaterial" msdata:child="Creation_Stage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Creation_Stage" msprop:Generator_RelationVarName="relationFK__Creation___ID_Vi__2645B050" msprop:Generator_ChildPropName="GetCreation_StageRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Creation___ID_Vi__2645B050" />
+      <msdata:Relationship name="FK__Event__ID_Broadc__3E1D39E1" msdata:parent="Broadcast" msdata:child="Event" msdata:parentkey="ID_Broadcast" msdata:childkey="ID_Broadcast" msprop:Generator_UserParentTable="Broadcast" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_UserRelationName="FK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ParentPropName="BroadcastRow" />
+      <msdata:Relationship name="FK__Event__ID_Videom__3F115E1A" msdata:parent="Videomaterial" msdata:child="Event" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Videom__3F115E1A" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Event__ID_Videom__3F115E1A" />
+      <msdata:Relationship name="FK__Videomate__ID_Ed__2FCF1A8A" msdata:parent="Video_Editing" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Editing" msdata:childkey="ID_Editing" msprop:Generator_UserParentTable="Video_Editing" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_UserRelationName="FK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ParentPropName="Video_EditingRow" />
+      <msdata:Relationship name="FK__Videomate__ID_Vi__2EDAF651" msdata:parent="Videomaterial" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_UserRelationName="FK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ParentPropName="VideomaterialRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

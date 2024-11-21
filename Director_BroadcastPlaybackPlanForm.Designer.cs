@@ -37,8 +37,6 @@
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
             this.broadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.broadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter();
-            this.broadcastsPlaybackPlan_DetailedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.broadcastsPlaybackPlan_DetailedTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlan_DetailedTableAdapter();
             this.addBroadcastButton = new БД_Телестудии.RoundButton();
             this.director_BroadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.director_BroadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Director_BroadcastsPlaybackPlanTableAdapter();
@@ -51,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.director_BroadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.director_BroadcastsPlaybackPlanDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -107,15 +104,6 @@
             // 
             this.broadcastsPlaybackPlanTableAdapter.ClearBeforeFill = true;
             // 
-            // broadcastsPlaybackPlan_DetailedBindingSource
-            // 
-            this.broadcastsPlaybackPlan_DetailedBindingSource.DataMember = "BroadcastsPlaybackPlan_Detailed";
-            this.broadcastsPlaybackPlan_DetailedBindingSource.DataSource = this.бД_ТелестудииDataSet;
-            // 
-            // broadcastsPlaybackPlan_DetailedTableAdapter
-            // 
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.ClearBeforeFill = true;
-            // 
             // addBroadcastButton
             // 
             this.addBroadcastButton.BackgroundColor = System.Drawing.Color.SteelBlue;
@@ -157,7 +145,7 @@
             this.director_BroadcastsPlaybackPlanDataGridView.Location = new System.Drawing.Point(27, 70);
             this.director_BroadcastsPlaybackPlanDataGridView.Name = "director_BroadcastsPlaybackPlanDataGridView";
             this.director_BroadcastsPlaybackPlanDataGridView.ReadOnly = true;
-            this.director_BroadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(743, 310);
+            this.director_BroadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(514, 310);
             this.director_BroadcastsPlaybackPlanDataGridView.TabIndex = 52;
             this.director_BroadcastsPlaybackPlanDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.director_BroadcastsPlaybackPlanDataGridView_CellMouseDoubleClick);
             // 
@@ -197,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(795, 479);
+            this.ClientSize = new System.Drawing.Size(561, 479);
             this.Controls.Add(this.director_BroadcastsPlaybackPlanDataGridView);
             this.Controls.Add(this.addBroadcastButton);
             this.Controls.Add(this.label1);
@@ -212,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.director_BroadcastsPlaybackPlanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.director_BroadcastsPlaybackPlanDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -232,8 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource broadcastsPlaybackPlanBindingSource;
         private БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter broadcastsPlaybackPlanTableAdapter;
-        private System.Windows.Forms.BindingSource broadcastsPlaybackPlan_DetailedBindingSource;
-        private БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlan_DetailedTableAdapter broadcastsPlaybackPlan_DetailedTableAdapter;
         private RoundButton addBroadcastButton;
         private System.Windows.Forms.BindingSource director_BroadcastsPlaybackPlanBindingSource;
         private БД_ТелестудииDataSetTableAdapters.Director_BroadcastsPlaybackPlanTableAdapter director_BroadcastsPlaybackPlanTableAdapter;

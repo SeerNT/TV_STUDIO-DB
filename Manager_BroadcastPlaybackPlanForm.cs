@@ -22,6 +22,10 @@ namespace БД_Телестудии
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
             this.manager_BroadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Broadcast". При необходимости она может быть перемещена или удалена.
+            this.broadcastTableAdapter.Fill(this.бД_ТелестудииDataSet.Broadcast);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
+            this.manager_BroadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan);
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -40,9 +44,6 @@ namespace БД_Телестудии
                     break;
                 case 3:
                     col = dataGridViewTextBoxColumn6;
-                    break;
-                case 4:
-                    col = dataGridViewTextBoxColumn7;
                     break;
             }
 
@@ -65,12 +66,20 @@ namespace БД_Телестудии
         {
             if (channelTextBox.Text != "")
             {
-                manager_BroadcastsPlaybackPlanBindingSource1.Filter = "[Внешний канал] Like '" + channelTextBox.Text + "%'";
+                manager_BroadcastsPlaybackPlanBindingSource.Filter = "[Внешний канал] Like '" + channelTextBox.Text + "%'";
             }
             else
             {
-                manager_BroadcastsPlaybackPlanBindingSource1.Filter = "";
+                manager_BroadcastsPlaybackPlanBindingSource.Filter = "";
             }
+        }
+
+        private void broadcastBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.broadcastBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
+
         }
     }
 }

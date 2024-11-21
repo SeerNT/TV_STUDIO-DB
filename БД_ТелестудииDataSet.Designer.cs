@@ -48,13 +48,11 @@ namespace БД_Телестудии {
         
         private BroadcastsPlaybackPlanDataTable tableBroadcastsPlaybackPlan;
         
-        private BroadcastsPlaybackPlan_DetailedDataTable tableBroadcastsPlaybackPlan_Detailed;
-        
         private Director_BroadcastsPlaybackPlanDataTable tableDirector_BroadcastsPlaybackPlan;
         
-        private Manager_BroadcastsPlaybackPlanDataTable tableManager_BroadcastsPlaybackPlan;
-        
         private VideoPropsDataTable tableVideoProps;
+        
+        private Manager_BroadcastsPlaybackPlanDataTable tableManager_BroadcastsPlaybackPlan;
         
         private global::System.Data.DataRelation relationFK__Broadcast__ID_Ca__32AB8735;
         
@@ -132,17 +130,14 @@ namespace БД_Телестудии {
                 if ((ds.Tables["BroadcastsPlaybackPlan"] != null)) {
                     base.Tables.Add(new BroadcastsPlaybackPlanDataTable(ds.Tables["BroadcastsPlaybackPlan"]));
                 }
-                if ((ds.Tables["BroadcastsPlaybackPlan_Detailed"] != null)) {
-                    base.Tables.Add(new BroadcastsPlaybackPlan_DetailedDataTable(ds.Tables["BroadcastsPlaybackPlan_Detailed"]));
-                }
                 if ((ds.Tables["Director_BroadcastsPlaybackPlan"] != null)) {
                     base.Tables.Add(new Director_BroadcastsPlaybackPlanDataTable(ds.Tables["Director_BroadcastsPlaybackPlan"]));
                 }
-                if ((ds.Tables["Manager_BroadcastsPlaybackPlan"] != null)) {
-                    base.Tables.Add(new Manager_BroadcastsPlaybackPlanDataTable(ds.Tables["Manager_BroadcastsPlaybackPlan"]));
-                }
                 if ((ds.Tables["VideoProps"] != null)) {
                     base.Tables.Add(new VideoPropsDataTable(ds.Tables["VideoProps"]));
+                }
+                if ((ds.Tables["Manager_BroadcastsPlaybackPlan"] != null)) {
+                    base.Tables.Add(new Manager_BroadcastsPlaybackPlanDataTable(ds.Tables["Manager_BroadcastsPlaybackPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -286,16 +281,6 @@ namespace БД_Телестудии {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BroadcastsPlaybackPlan_DetailedDataTable BroadcastsPlaybackPlan_Detailed {
-            get {
-                return this.tableBroadcastsPlaybackPlan_Detailed;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public Director_BroadcastsPlaybackPlanDataTable Director_BroadcastsPlaybackPlan {
             get {
                 return this.tableDirector_BroadcastsPlaybackPlan;
@@ -306,9 +291,9 @@ namespace БД_Телестудии {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Manager_BroadcastsPlaybackPlanDataTable Manager_BroadcastsPlaybackPlan {
+        public VideoPropsDataTable VideoProps {
             get {
-                return this.tableManager_BroadcastsPlaybackPlan;
+                return this.tableVideoProps;
             }
         }
         
@@ -316,9 +301,9 @@ namespace БД_Телестудии {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VideoPropsDataTable VideoProps {
+        public Manager_BroadcastsPlaybackPlanDataTable Manager_BroadcastsPlaybackPlan {
             get {
-                return this.tableVideoProps;
+                return this.tableManager_BroadcastsPlaybackPlan;
             }
         }
         
@@ -425,17 +410,14 @@ namespace БД_Телестудии {
                 if ((ds.Tables["BroadcastsPlaybackPlan"] != null)) {
                     base.Tables.Add(new BroadcastsPlaybackPlanDataTable(ds.Tables["BroadcastsPlaybackPlan"]));
                 }
-                if ((ds.Tables["BroadcastsPlaybackPlan_Detailed"] != null)) {
-                    base.Tables.Add(new BroadcastsPlaybackPlan_DetailedDataTable(ds.Tables["BroadcastsPlaybackPlan_Detailed"]));
-                }
                 if ((ds.Tables["Director_BroadcastsPlaybackPlan"] != null)) {
                     base.Tables.Add(new Director_BroadcastsPlaybackPlanDataTable(ds.Tables["Director_BroadcastsPlaybackPlan"]));
                 }
-                if ((ds.Tables["Manager_BroadcastsPlaybackPlan"] != null)) {
-                    base.Tables.Add(new Manager_BroadcastsPlaybackPlanDataTable(ds.Tables["Manager_BroadcastsPlaybackPlan"]));
-                }
                 if ((ds.Tables["VideoProps"] != null)) {
                     base.Tables.Add(new VideoPropsDataTable(ds.Tables["VideoProps"]));
+                }
+                if ((ds.Tables["Manager_BroadcastsPlaybackPlan"] != null)) {
+                    base.Tables.Add(new Manager_BroadcastsPlaybackPlanDataTable(ds.Tables["Manager_BroadcastsPlaybackPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -542,28 +524,22 @@ namespace БД_Телестудии {
                     this.tableBroadcastsPlaybackPlan.InitVars();
                 }
             }
-            this.tableBroadcastsPlaybackPlan_Detailed = ((BroadcastsPlaybackPlan_DetailedDataTable)(base.Tables["BroadcastsPlaybackPlan_Detailed"]));
-            if ((initTable == true)) {
-                if ((this.tableBroadcastsPlaybackPlan_Detailed != null)) {
-                    this.tableBroadcastsPlaybackPlan_Detailed.InitVars();
-                }
-            }
             this.tableDirector_BroadcastsPlaybackPlan = ((Director_BroadcastsPlaybackPlanDataTable)(base.Tables["Director_BroadcastsPlaybackPlan"]));
             if ((initTable == true)) {
                 if ((this.tableDirector_BroadcastsPlaybackPlan != null)) {
                     this.tableDirector_BroadcastsPlaybackPlan.InitVars();
                 }
             }
-            this.tableManager_BroadcastsPlaybackPlan = ((Manager_BroadcastsPlaybackPlanDataTable)(base.Tables["Manager_BroadcastsPlaybackPlan"]));
-            if ((initTable == true)) {
-                if ((this.tableManager_BroadcastsPlaybackPlan != null)) {
-                    this.tableManager_BroadcastsPlaybackPlan.InitVars();
-                }
-            }
             this.tableVideoProps = ((VideoPropsDataTable)(base.Tables["VideoProps"]));
             if ((initTable == true)) {
                 if ((this.tableVideoProps != null)) {
                     this.tableVideoProps.InitVars();
+                }
+            }
+            this.tableManager_BroadcastsPlaybackPlan = ((Manager_BroadcastsPlaybackPlanDataTable)(base.Tables["Manager_BroadcastsPlaybackPlan"]));
+            if ((initTable == true)) {
+                if ((this.tableManager_BroadcastsPlaybackPlan != null)) {
+                    this.tableManager_BroadcastsPlaybackPlan.InitVars();
                 }
             }
             this.relationFK__Broadcast__ID_Ca__32AB8735 = this.Relations["FK__Broadcast__ID_Ca__32AB8735"];
@@ -606,14 +582,12 @@ namespace БД_Телестудии {
             base.Tables.Add(this.tableEventView);
             this.tableBroadcastsPlaybackPlan = new BroadcastsPlaybackPlanDataTable();
             base.Tables.Add(this.tableBroadcastsPlaybackPlan);
-            this.tableBroadcastsPlaybackPlan_Detailed = new BroadcastsPlaybackPlan_DetailedDataTable();
-            base.Tables.Add(this.tableBroadcastsPlaybackPlan_Detailed);
             this.tableDirector_BroadcastsPlaybackPlan = new Director_BroadcastsPlaybackPlanDataTable();
             base.Tables.Add(this.tableDirector_BroadcastsPlaybackPlan);
-            this.tableManager_BroadcastsPlaybackPlan = new Manager_BroadcastsPlaybackPlanDataTable();
-            base.Tables.Add(this.tableManager_BroadcastsPlaybackPlan);
             this.tableVideoProps = new VideoPropsDataTable();
             base.Tables.Add(this.tableVideoProps);
+            this.tableManager_BroadcastsPlaybackPlan = new Manager_BroadcastsPlaybackPlanDataTable();
+            base.Tables.Add(this.tableManager_BroadcastsPlaybackPlan);
             this.relationFK__Broadcast__ID_Ca__32AB8735 = new global::System.Data.DataRelation("FK__Broadcast__ID_Ca__32AB8735", new global::System.Data.DataColumn[] {
                         this.tableCategory.ID_CategoryColumn}, new global::System.Data.DataColumn[] {
                         this.tableBroadcast.ID_CategoryColumn}, false);
@@ -714,25 +688,19 @@ namespace БД_Телестудии {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeBroadcastsPlaybackPlan_Detailed() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeDirector_BroadcastsPlaybackPlan() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeManager_BroadcastsPlaybackPlan() {
+        private bool ShouldSerializeVideoProps() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeVideoProps() {
+        private bool ShouldSerializeManager_BroadcastsPlaybackPlan() {
             return false;
         }
         
@@ -828,16 +796,13 @@ namespace БД_Телестудии {
         public delegate void BroadcastsPlaybackPlanRowChangeEventHandler(object sender, BroadcastsPlaybackPlanRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void BroadcastsPlaybackPlan_DetailedRowChangeEventHandler(object sender, BroadcastsPlaybackPlan_DetailedRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void Director_BroadcastsPlaybackPlanRowChangeEventHandler(object sender, Director_BroadcastsPlaybackPlanRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void Manager_BroadcastsPlaybackPlanRowChangeEventHandler(object sender, Manager_BroadcastsPlaybackPlanRowChangeEvent e);
+        public delegate void VideoPropsRowChangeEventHandler(object sender, VideoPropsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void VideoPropsRowChangeEventHandler(object sender, VideoPropsRowChangeEvent e);
+        public delegate void Manager_BroadcastsPlaybackPlanRowChangeEventHandler(object sender, Manager_BroadcastsPlaybackPlanRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4485,356 +4450,6 @@ namespace БД_Телестудии {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BroadcastsPlaybackPlan_DetailedDataTable : global::System.Data.TypedTableBase<BroadcastsPlaybackPlan_DetailedRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnКатегория;
-            
-            private global::System.Data.DataColumn columnВнешний_канал;
-            
-            private global::System.Data.DataColumn columnДата_воспроизведения;
-            
-            private global::System.Data.DataColumn columnДлительность;
-            
-            private global::System.Data.DataColumn columnЧастота_кадров;
-            
-            private global::System.Data.DataColumn columnАвтор;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedDataTable() {
-                this.TableName = "BroadcastsPlaybackPlan_Detailed";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BroadcastsPlaybackPlan_DetailedDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected BroadcastsPlaybackPlan_DetailedDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn КатегорияColumn {
-                get {
-                    return this.columnКатегория;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Внешний_каналColumn {
-                get {
-                    return this.columnВнешний_канал;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Дата_воспроизведенияColumn {
-                get {
-                    return this.columnДата_воспроизведения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ДлительностьColumn {
-                get {
-                    return this.columnДлительность;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Частота_кадровColumn {
-                get {
-                    return this.columnЧастота_кадров;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn АвторColumn {
-                get {
-                    return this.columnАвтор;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRow this[int index] {
-                get {
-                    return ((BroadcastsPlaybackPlan_DetailedRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BroadcastsPlaybackPlan_DetailedRowChangeEventHandler BroadcastsPlaybackPlan_DetailedRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BroadcastsPlaybackPlan_DetailedRowChangeEventHandler BroadcastsPlaybackPlan_DetailedRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BroadcastsPlaybackPlan_DetailedRowChangeEventHandler BroadcastsPlaybackPlan_DetailedRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BroadcastsPlaybackPlan_DetailedRowChangeEventHandler BroadcastsPlaybackPlan_DetailedRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBroadcastsPlaybackPlan_DetailedRow(BroadcastsPlaybackPlan_DetailedRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRow AddBroadcastsPlaybackPlan_DetailedRow(short ID, string Категория, string Внешний_канал, System.DateTime Дата_воспроизведения, int Длительность, short Частота_кадров, string Автор) {
-                BroadcastsPlaybackPlan_DetailedRow rowBroadcastsPlaybackPlan_DetailedRow = ((BroadcastsPlaybackPlan_DetailedRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ID,
-                        Категория,
-                        Внешний_канал,
-                        Дата_воспроизведения,
-                        Длительность,
-                        Частота_кадров,
-                        Автор};
-                rowBroadcastsPlaybackPlan_DetailedRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBroadcastsPlaybackPlan_DetailedRow);
-                return rowBroadcastsPlaybackPlan_DetailedRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRow FindByID(short ID) {
-                return ((BroadcastsPlaybackPlan_DetailedRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                BroadcastsPlaybackPlan_DetailedDataTable cln = ((BroadcastsPlaybackPlan_DetailedDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new BroadcastsPlaybackPlan_DetailedDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnКатегория = base.Columns["Категория"];
-                this.columnВнешний_канал = base.Columns["Внешний канал"];
-                this.columnДата_воспроизведения = base.Columns["Дата воспроизведения"];
-                this.columnДлительность = base.Columns["Длительность"];
-                this.columnЧастота_кадров = base.Columns["Частота кадров"];
-                this.columnАвтор = base.Columns["Автор"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnКатегория = new global::System.Data.DataColumn("Категория", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКатегория);
-                this.columnВнешний_канал = new global::System.Data.DataColumn("Внешний канал", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВнешний_канал);
-                this.columnДата_воспроизведения = new global::System.Data.DataColumn("Дата воспроизведения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДата_воспроизведения);
-                this.columnДлительность = new global::System.Data.DataColumn("Длительность", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДлительность);
-                this.columnЧастота_кадров = new global::System.Data.DataColumn("Частота кадров", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnЧастота_кадров);
-                this.columnАвтор = new global::System.Data.DataColumn("Автор", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnАвтор);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-                this.columnКатегория.AllowDBNull = false;
-                this.columnКатегория.MaxLength = 45;
-                this.columnВнешний_канал.AllowDBNull = false;
-                this.columnВнешний_канал.MaxLength = 45;
-                this.columnДата_воспроизведения.AllowDBNull = false;
-                this.columnДлительность.AllowDBNull = false;
-                this.columnЧастота_кадров.AllowDBNull = false;
-                this.columnАвтор.MaxLength = 45;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRow NewBroadcastsPlaybackPlan_DetailedRow() {
-                return ((BroadcastsPlaybackPlan_DetailedRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BroadcastsPlaybackPlan_DetailedRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(BroadcastsPlaybackPlan_DetailedRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.BroadcastsPlaybackPlan_DetailedRowChanged != null)) {
-                    this.BroadcastsPlaybackPlan_DetailedRowChanged(this, new BroadcastsPlaybackPlan_DetailedRowChangeEvent(((BroadcastsPlaybackPlan_DetailedRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.BroadcastsPlaybackPlan_DetailedRowChanging != null)) {
-                    this.BroadcastsPlaybackPlan_DetailedRowChanging(this, new BroadcastsPlaybackPlan_DetailedRowChangeEvent(((BroadcastsPlaybackPlan_DetailedRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.BroadcastsPlaybackPlan_DetailedRowDeleted != null)) {
-                    this.BroadcastsPlaybackPlan_DetailedRowDeleted(this, new BroadcastsPlaybackPlan_DetailedRowChangeEvent(((BroadcastsPlaybackPlan_DetailedRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.BroadcastsPlaybackPlan_DetailedRowDeleting != null)) {
-                    this.BroadcastsPlaybackPlan_DetailedRowDeleting(this, new BroadcastsPlaybackPlan_DetailedRowChangeEvent(((BroadcastsPlaybackPlan_DetailedRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveBroadcastsPlaybackPlan_DetailedRow(BroadcastsPlaybackPlan_DetailedRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                БД_ТелестудииDataSet ds = new БД_ТелестудииDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BroadcastsPlaybackPlan_DetailedDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Director_BroadcastsPlaybackPlanDataTable : global::System.Data.TypedTableBase<Director_BroadcastsPlaybackPlanRow> {
             
             private global::System.Data.DataColumn columnID;
@@ -5140,326 +4755,6 @@ namespace БД_Телестудии {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Manager_BroadcastsPlaybackPlanDataTable : global::System.Data.TypedTableBase<Manager_BroadcastsPlaybackPlanRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnКатегория;
-            
-            private global::System.Data.DataColumn columnВнешний_канал;
-            
-            private global::System.Data.DataColumn columnДата_воспроизведения;
-            
-            private global::System.Data.DataColumn columnДлительность;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanDataTable() {
-                this.TableName = "Manager_BroadcastsPlaybackPlan";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Manager_BroadcastsPlaybackPlanDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected Manager_BroadcastsPlaybackPlanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn КатегорияColumn {
-                get {
-                    return this.columnКатегория;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Внешний_каналColumn {
-                get {
-                    return this.columnВнешний_канал;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Дата_воспроизведенияColumn {
-                get {
-                    return this.columnДата_воспроизведения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ДлительностьColumn {
-                get {
-                    return this.columnДлительность;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRow this[int index] {
-                get {
-                    return ((Manager_BroadcastsPlaybackPlanRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddManager_BroadcastsPlaybackPlanRow(Manager_BroadcastsPlaybackPlanRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRow AddManager_BroadcastsPlaybackPlanRow(short ID, string Категория, string Внешний_канал, System.DateTime Дата_воспроизведения, int Длительность) {
-                Manager_BroadcastsPlaybackPlanRow rowManager_BroadcastsPlaybackPlanRow = ((Manager_BroadcastsPlaybackPlanRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ID,
-                        Категория,
-                        Внешний_канал,
-                        Дата_воспроизведения,
-                        Длительность};
-                rowManager_BroadcastsPlaybackPlanRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowManager_BroadcastsPlaybackPlanRow);
-                return rowManager_BroadcastsPlaybackPlanRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRow FindByID(short ID) {
-                return ((Manager_BroadcastsPlaybackPlanRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Manager_BroadcastsPlaybackPlanDataTable cln = ((Manager_BroadcastsPlaybackPlanDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Manager_BroadcastsPlaybackPlanDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnКатегория = base.Columns["Категория"];
-                this.columnВнешний_канал = base.Columns["Внешний канал"];
-                this.columnДата_воспроизведения = base.Columns["Дата воспроизведения"];
-                this.columnДлительность = base.Columns["Длительность"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnКатегория = new global::System.Data.DataColumn("Категория", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКатегория);
-                this.columnВнешний_канал = new global::System.Data.DataColumn("Внешний канал", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВнешний_канал);
-                this.columnДата_воспроизведения = new global::System.Data.DataColumn("Дата воспроизведения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДата_воспроизведения);
-                this.columnДлительность = new global::System.Data.DataColumn("Длительность", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДлительность);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-                this.columnКатегория.AllowDBNull = false;
-                this.columnКатегория.MaxLength = 45;
-                this.columnВнешний_канал.AllowDBNull = false;
-                this.columnВнешний_канал.MaxLength = 45;
-                this.columnДата_воспроизведения.AllowDBNull = false;
-                this.columnДлительность.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRow NewManager_BroadcastsPlaybackPlanRow() {
-                return ((Manager_BroadcastsPlaybackPlanRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Manager_BroadcastsPlaybackPlanRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Manager_BroadcastsPlaybackPlanRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Manager_BroadcastsPlaybackPlanRowChanged != null)) {
-                    this.Manager_BroadcastsPlaybackPlanRowChanged(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Manager_BroadcastsPlaybackPlanRowChanging != null)) {
-                    this.Manager_BroadcastsPlaybackPlanRowChanging(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Manager_BroadcastsPlaybackPlanRowDeleted != null)) {
-                    this.Manager_BroadcastsPlaybackPlanRowDeleted(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Manager_BroadcastsPlaybackPlanRowDeleting != null)) {
-                    this.Manager_BroadcastsPlaybackPlanRowDeleting(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveManager_BroadcastsPlaybackPlanRow(Manager_BroadcastsPlaybackPlanRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                БД_ТелестудииDataSet ds = new БД_ТелестудииDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Manager_BroadcastsPlaybackPlanDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class VideoPropsDataTable : global::System.Data.TypedTableBase<VideoPropsRow> {
             
             private global::System.Data.DataColumn columnIdea_description;
@@ -5694,6 +4989,311 @@ namespace БД_Телестудии {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "VideoPropsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Manager_BroadcastsPlaybackPlanDataTable : global::System.Data.TypedTableBase<Manager_BroadcastsPlaybackPlanRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnКатегория;
+            
+            private global::System.Data.DataColumn columnВнешний_канал;
+            
+            private global::System.Data.DataColumn columnДата_воспроизведения;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Manager_BroadcastsPlaybackPlanDataTable() {
+                this.TableName = "Manager_BroadcastsPlaybackPlan";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Manager_BroadcastsPlaybackPlanDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Manager_BroadcastsPlaybackPlanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn КатегорияColumn {
+                get {
+                    return this.columnКатегория;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Внешний_каналColumn {
+                get {
+                    return this.columnВнешний_канал;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Дата_воспроизведенияColumn {
+                get {
+                    return this.columnДата_воспроизведения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Manager_BroadcastsPlaybackPlanRow this[int index] {
+                get {
+                    return ((Manager_BroadcastsPlaybackPlanRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Manager_BroadcastsPlaybackPlanRowChangeEventHandler Manager_BroadcastsPlaybackPlanRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddManager_BroadcastsPlaybackPlanRow(Manager_BroadcastsPlaybackPlanRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Manager_BroadcastsPlaybackPlanRow AddManager_BroadcastsPlaybackPlanRow(short ID, string Категория, string Внешний_канал, System.DateTime Дата_воспроизведения) {
+                Manager_BroadcastsPlaybackPlanRow rowManager_BroadcastsPlaybackPlanRow = ((Manager_BroadcastsPlaybackPlanRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        Категория,
+                        Внешний_канал,
+                        Дата_воспроизведения};
+                rowManager_BroadcastsPlaybackPlanRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowManager_BroadcastsPlaybackPlanRow);
+                return rowManager_BroadcastsPlaybackPlanRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Manager_BroadcastsPlaybackPlanRow FindByID(short ID) {
+                return ((Manager_BroadcastsPlaybackPlanRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Manager_BroadcastsPlaybackPlanDataTable cln = ((Manager_BroadcastsPlaybackPlanDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Manager_BroadcastsPlaybackPlanDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnКатегория = base.Columns["Категория"];
+                this.columnВнешний_канал = base.Columns["Внешний канал"];
+                this.columnДата_воспроизведения = base.Columns["Дата воспроизведения"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnКатегория = new global::System.Data.DataColumn("Категория", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКатегория);
+                this.columnВнешний_канал = new global::System.Data.DataColumn("Внешний канал", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВнешний_канал);
+                this.columnДата_воспроизведения = new global::System.Data.DataColumn("Дата воспроизведения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_воспроизведения);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnКатегория.AllowDBNull = false;
+                this.columnКатегория.MaxLength = 45;
+                this.columnВнешний_канал.AllowDBNull = false;
+                this.columnВнешний_канал.MaxLength = 45;
+                this.columnДата_воспроизведения.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Manager_BroadcastsPlaybackPlanRow NewManager_BroadcastsPlaybackPlanRow() {
+                return ((Manager_BroadcastsPlaybackPlanRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Manager_BroadcastsPlaybackPlanRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Manager_BroadcastsPlaybackPlanRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Manager_BroadcastsPlaybackPlanRowChanged != null)) {
+                    this.Manager_BroadcastsPlaybackPlanRowChanged(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Manager_BroadcastsPlaybackPlanRowChanging != null)) {
+                    this.Manager_BroadcastsPlaybackPlanRowChanging(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Manager_BroadcastsPlaybackPlanRowDeleted != null)) {
+                    this.Manager_BroadcastsPlaybackPlanRowDeleted(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Manager_BroadcastsPlaybackPlanRowDeleting != null)) {
+                    this.Manager_BroadcastsPlaybackPlanRowDeleting(this, new Manager_BroadcastsPlaybackPlanRowChangeEvent(((Manager_BroadcastsPlaybackPlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveManager_BroadcastsPlaybackPlanRow(Manager_BroadcastsPlaybackPlanRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                БД_ТелестудииDataSet ds = new БД_ТелестудииDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Manager_BroadcastsPlaybackPlanDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6781,116 +6381,6 @@ namespace БД_Телестудии {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BroadcastsPlaybackPlan_DetailedRow : global::System.Data.DataRow {
-            
-            private BroadcastsPlaybackPlan_DetailedDataTable tableBroadcastsPlaybackPlan_Detailed;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BroadcastsPlaybackPlan_DetailedRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableBroadcastsPlaybackPlan_Detailed = ((BroadcastsPlaybackPlan_DetailedDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public short ID {
-                get {
-                    return ((short)(this[this.tableBroadcastsPlaybackPlan_Detailed.IDColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Категория {
-                get {
-                    return ((string)(this[this.tableBroadcastsPlaybackPlan_Detailed.КатегорияColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.КатегорияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Внешний_канал {
-                get {
-                    return ((string)(this[this.tableBroadcastsPlaybackPlan_Detailed.Внешний_каналColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.Внешний_каналColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Дата_воспроизведения {
-                get {
-                    return ((global::System.DateTime)(this[this.tableBroadcastsPlaybackPlan_Detailed.Дата_воспроизведенияColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.Дата_воспроизведенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Длительность {
-                get {
-                    return ((int)(this[this.tableBroadcastsPlaybackPlan_Detailed.ДлительностьColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.ДлительностьColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public short Частота_кадров {
-                get {
-                    return ((short)(this[this.tableBroadcastsPlaybackPlan_Detailed.Частота_кадровColumn]));
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.Частота_кадровColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Автор {
-                get {
-                    try {
-                        return ((string)(this[this.tableBroadcastsPlaybackPlan_Detailed.АвторColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Автор\' в таблице \'BroadcastsPlaybackPlan_Detailed\' равно DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableBroadcastsPlaybackPlan_Detailed.АвторColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsАвторNull() {
-                return this.IsNull(this.tableBroadcastsPlaybackPlan_Detailed.АвторColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetАвторNull() {
-                this[this.tableBroadcastsPlaybackPlan_Detailed.АвторColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class Director_BroadcastsPlaybackPlanRow : global::System.Data.DataRow {
             
             private Director_BroadcastsPlaybackPlanDataTable tableDirector_BroadcastsPlaybackPlan;
@@ -6943,76 +6433,6 @@ namespace БД_Телестудии {
                 }
                 set {
                     this[this.tableDirector_BroadcastsPlaybackPlan.Дата_воспроизведенияColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class Manager_BroadcastsPlaybackPlanRow : global::System.Data.DataRow {
-            
-            private Manager_BroadcastsPlaybackPlanDataTable tableManager_BroadcastsPlaybackPlan;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Manager_BroadcastsPlaybackPlanRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableManager_BroadcastsPlaybackPlan = ((Manager_BroadcastsPlaybackPlanDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public short ID {
-                get {
-                    return ((short)(this[this.tableManager_BroadcastsPlaybackPlan.IDColumn]));
-                }
-                set {
-                    this[this.tableManager_BroadcastsPlaybackPlan.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Категория {
-                get {
-                    return ((string)(this[this.tableManager_BroadcastsPlaybackPlan.КатегорияColumn]));
-                }
-                set {
-                    this[this.tableManager_BroadcastsPlaybackPlan.КатегорияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Внешний_канал {
-                get {
-                    return ((string)(this[this.tableManager_BroadcastsPlaybackPlan.Внешний_каналColumn]));
-                }
-                set {
-                    this[this.tableManager_BroadcastsPlaybackPlan.Внешний_каналColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Дата_воспроизведения {
-                get {
-                    return ((global::System.DateTime)(this[this.tableManager_BroadcastsPlaybackPlan.Дата_воспроизведенияColumn]));
-                }
-                set {
-                    this[this.tableManager_BroadcastsPlaybackPlan.Дата_воспроизведенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Длительность {
-                get {
-                    return ((int)(this[this.tableManager_BroadcastsPlaybackPlan.ДлительностьColumn]));
-                }
-                set {
-                    this[this.tableManager_BroadcastsPlaybackPlan.ДлительностьColumn] = value;
                 }
             }
         }
@@ -7079,6 +6499,65 @@ namespace БД_Телестудии {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAuthorNull() {
                 this[this.tableVideoProps.AuthorColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Manager_BroadcastsPlaybackPlanRow : global::System.Data.DataRow {
+            
+            private Manager_BroadcastsPlaybackPlanDataTable tableManager_BroadcastsPlaybackPlan;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Manager_BroadcastsPlaybackPlanRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableManager_BroadcastsPlaybackPlan = ((Manager_BroadcastsPlaybackPlanDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public short ID {
+                get {
+                    return ((short)(this[this.tableManager_BroadcastsPlaybackPlan.IDColumn]));
+                }
+                set {
+                    this[this.tableManager_BroadcastsPlaybackPlan.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Категория {
+                get {
+                    return ((string)(this[this.tableManager_BroadcastsPlaybackPlan.КатегорияColumn]));
+                }
+                set {
+                    this[this.tableManager_BroadcastsPlaybackPlan.КатегорияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Внешний_канал {
+                get {
+                    return ((string)(this[this.tableManager_BroadcastsPlaybackPlan.Внешний_каналColumn]));
+                }
+                set {
+                    this[this.tableManager_BroadcastsPlaybackPlan.Внешний_каналColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Дата_воспроизведения {
+                get {
+                    return ((global::System.DateTime)(this[this.tableManager_BroadcastsPlaybackPlan.Дата_воспроизведенияColumn]));
+                }
+                set {
+                    this[this.tableManager_BroadcastsPlaybackPlan.Дата_воспроизведенияColumn] = value;
+                }
             }
         }
         
@@ -7494,40 +6973,6 @@ namespace БД_Телестудии {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class BroadcastsPlaybackPlan_DetailedRowChangeEvent : global::System.EventArgs {
-            
-            private BroadcastsPlaybackPlan_DetailedRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRowChangeEvent(BroadcastsPlaybackPlan_DetailedRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BroadcastsPlaybackPlan_DetailedRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public class Director_BroadcastsPlaybackPlanRowChangeEvent : global::System.EventArgs {
             
             private Director_BroadcastsPlaybackPlanRow eventRow;
@@ -7562,22 +7007,22 @@ namespace БД_Телестудии {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class Manager_BroadcastsPlaybackPlanRowChangeEvent : global::System.EventArgs {
+        public class VideoPropsRowChangeEvent : global::System.EventArgs {
             
-            private Manager_BroadcastsPlaybackPlanRow eventRow;
+            private VideoPropsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRowChangeEvent(Manager_BroadcastsPlaybackPlanRow row, global::System.Data.DataRowAction action) {
+            public VideoPropsRowChangeEvent(VideoPropsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Manager_BroadcastsPlaybackPlanRow Row {
+            public VideoPropsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7596,22 +7041,22 @@ namespace БД_Телестудии {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class VideoPropsRowChangeEvent : global::System.EventArgs {
+        public class Manager_BroadcastsPlaybackPlanRowChangeEvent : global::System.EventArgs {
             
-            private VideoPropsRow eventRow;
+            private Manager_BroadcastsPlaybackPlanRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VideoPropsRowChangeEvent(VideoPropsRow row, global::System.Data.DataRowAction action) {
+            public Manager_BroadcastsPlaybackPlanRowChangeEvent(Manager_BroadcastsPlaybackPlanRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VideoPropsRow Row {
+            public Manager_BroadcastsPlaybackPlanRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11225,180 +10670,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BroadcastsPlaybackPlan_DetailedTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BroadcastsPlaybackPlan_DetailedTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "BroadcastsPlaybackPlan_Detailed";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Категория", "Категория");
-            tableMapping.ColumnMappings.Add("Внешний канал", "Внешний канал");
-            tableMapping.ColumnMappings.Add("Дата воспроизведения", "Дата воспроизведения");
-            tableMapping.ColumnMappings.Add("Длительность", "Длительность");
-            tableMapping.ColumnMappings.Add("Частота кадров", "Частота кадров");
-            tableMapping.ColumnMappings.Add("Автор", "Автор");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::БД_Телестудии.Properties.Settings.Default.БД_ТелестудииConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Категория, [Внешний канал], [Дата воспроизведения], Длительность, [Час" +
-                "тота кадров], Автор FROM dbo.BroadcastsPlaybackPlan_Detailed";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(БД_ТелестудииDataSet.BroadcastsPlaybackPlan_DetailedDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual БД_ТелестудииDataSet.BroadcastsPlaybackPlan_DetailedDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            БД_ТелестудииDataSet.BroadcastsPlaybackPlan_DetailedDataTable dataTable = new БД_ТелестудииDataSet.BroadcastsPlaybackPlan_DetailedDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class Director_BroadcastsPlaybackPlanTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -11570,178 +10841,6 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Manager_BroadcastsPlaybackPlanTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Manager_BroadcastsPlaybackPlanTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Manager_BroadcastsPlaybackPlan";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Категория", "Категория");
-            tableMapping.ColumnMappings.Add("Внешний канал", "Внешний канал");
-            tableMapping.ColumnMappings.Add("Дата воспроизведения", "Дата воспроизведения");
-            tableMapping.ColumnMappings.Add("Длительность", "Длительность");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::БД_Телестудии.Properties.Settings.Default.БД_ТелестудииConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Категория, [Внешний канал], [Дата воспроизведения], Длительность FROM " +
-                "dbo.Manager_BroadcastsPlaybackPlan";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable dataTable = new БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class VideoPropsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -11897,6 +10996,177 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
         public virtual БД_ТелестудииDataSet.VideoPropsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             БД_ТелестудииDataSet.VideoPropsDataTable dataTable = new БД_ТелестудииDataSet.VideoPropsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Manager_BroadcastsPlaybackPlanTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Manager_BroadcastsPlaybackPlanTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Manager_BroadcastsPlaybackPlan";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Категория", "Категория");
+            tableMapping.ColumnMappings.Add("Внешний канал", "Внешний канал");
+            tableMapping.ColumnMappings.Add("Дата воспроизведения", "Дата воспроизведения");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::БД_Телестудии.Properties.Settings.Default.БД_ТелестудииConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, Категория, [Внешний канал], [Дата воспроизведения] FROM dbo.Manager_Br" +
+                "oadcastsPlaybackPlan";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable dataTable = new БД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

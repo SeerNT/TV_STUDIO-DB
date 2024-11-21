@@ -13,12 +13,14 @@ namespace БД_Телестудии
     public partial class EditEvent : Form
     {
         private VideoEditingForm editForm;
+        private BroadcastPlaybackPlanForm mainForm;
 
         public EditEvent(VideoEditingForm editForm)
         {
             
             InitializeComponent();
             this.editForm = editForm;
+            this.mainForm = editForm.mainForm;
         }
 
         private void EditEvent_Load(object sender, EventArgs e)
@@ -144,7 +146,10 @@ namespace БД_Телестудии
                 ChangeEventCommand.Parameters["@videoID"].Value = row.Row[0].ToString();
 
                 sqlConnection1.Open();
-                
+
+                editForm.UpdateTable();
+                mainForm.UpdateTable();
+
                 ChangeEventCommand.ExecuteNonQuery();
 
                 UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value =

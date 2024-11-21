@@ -76,7 +76,8 @@ namespace БД_Телестудии
         {
             string Symbol = e.KeyChar.ToString();
 
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]|[.]").Success && e.KeyChar != (char)Keys.Back)
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]|[.]").Success 
+                && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
             {
                 e.Handled = true;
             }

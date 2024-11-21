@@ -53,26 +53,30 @@ namespace БД_Телестудии
 
         private void director_BroadcastsPlaybackPlanDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            if(e.RowIndex != -1)
             {
-                broadcastID = int.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
-                    Cells[0].Value.ToString());
+                if (director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()
+                    != "")
+                {
+                    broadcastID = int.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[0].Value.ToString());
 
-                category = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
-                    Cells[1].Value.ToString();
+                    category = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[1].Value.ToString();
 
-                channel = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
-                    Cells[2].Value.ToString();
+                    channel = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[2].Value.ToString();
 
-                date = DateTime.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
-                    Cells[3].Value.ToString());
+                    date = DateTime.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                        Cells[3].Value.ToString());
 
-                if (directorEditingForm != null)
-                    directorEditingForm.Close();
+                    if (directorEditingForm != null)
+                        directorEditingForm.Close();
 
-                directorEditingForm = new DirectorEditingForm(this);
-                directorEditingForm.mode = 1;
-                directorEditingForm.Show();
+                    directorEditingForm = new DirectorEditingForm(this);
+                    directorEditingForm.mode = 1;
+                    directorEditingForm.Show();
+                }
             }
         }
     }

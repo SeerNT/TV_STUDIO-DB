@@ -35,35 +35,34 @@
             this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.videomaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.videomaterialTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.VideomaterialTableAdapter();
-            this.detailedTableCheckBox = new System.Windows.Forms.CheckBox();
             this.broadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
-            this.broadcastsPlaybackPlan_DetailedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openProgressButton = new БД_Телестудии.RoundButton();
             this.propOpenButton = new БД_Телестудии.RoundButton();
             this.broadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter();
             this.broadcastsPlaybackPlanDataGridView = new System.Windows.Forms.DataGridView();
-            this.broadcastsPlaybackPlan_DetailedTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlan_DetailedTableAdapter();
-            this.broadcastsPlaybackPlan_DetailedDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iDLabel1 = new System.Windows.Forms.Label();
+            this.video_EditingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.video_EditingTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Video_EditingTableAdapter();
+            this.durationLabel1 = new System.Windows.Forms.Label();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.framerateLabel1 = new System.Windows.Forms.Label();
+            this.authorLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video_EditingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,18 +99,6 @@
             // 
             this.videomaterialTableAdapter.ClearBeforeFill = true;
             // 
-            // detailedTableCheckBox
-            // 
-            this.detailedTableCheckBox.AutoSize = true;
-            this.detailedTableCheckBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailedTableCheckBox.Location = new System.Drawing.Point(576, 30);
-            this.detailedTableCheckBox.Name = "detailedTableCheckBox";
-            this.detailedTableCheckBox.Size = new System.Drawing.Size(194, 22);
-            this.detailedTableCheckBox.TabIndex = 13;
-            this.detailedTableCheckBox.Text = "Подробное отображение";
-            this.detailedTableCheckBox.UseVisualStyleBackColor = true;
-            this.detailedTableCheckBox.CheckedChanged += new System.EventHandler(this.detailedTableCheckBox_CheckedChanged);
-            // 
             // broadcastsPlaybackPlanBindingSource
             // 
             this.broadcastsPlaybackPlanBindingSource.DataMember = "BroadcastsPlaybackPlan";
@@ -130,11 +117,6 @@
             this.tableAdapterManager.Videomaterial_UsageTableAdapter = null;
             this.tableAdapterManager.VideomaterialTableAdapter = this.videomaterialTableAdapter;
             // 
-            // broadcastsPlaybackPlan_DetailedBindingSource
-            // 
-            this.broadcastsPlaybackPlan_DetailedBindingSource.DataMember = "BroadcastsPlaybackPlan_Detailed";
-            this.broadcastsPlaybackPlan_DetailedBindingSource.DataSource = this.бД_ТелестудииDataSet;
-            // 
             // openProgressButton
             // 
             this.openProgressButton.BackgroundColor = System.Drawing.Color.SteelBlue;
@@ -143,7 +125,7 @@
             this.openProgressButton.ButtonText = "Прогресс монтажа";
             this.openProgressButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openProgressButton.ForeColor = System.Drawing.Color.White;
-            this.openProgressButton.Location = new System.Drawing.Point(298, 316);
+            this.openProgressButton.Location = new System.Drawing.Point(298, 350);
             this.openProgressButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.openProgressButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
             this.openProgressButton.Name = "openProgressButton";
@@ -162,7 +144,7 @@
             this.propOpenButton.ButtonText = "Характеристики видеоматериала";
             this.propOpenButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.propOpenButton.ForeColor = System.Drawing.Color.White;
-            this.propOpenButton.Location = new System.Drawing.Point(27, 316);
+            this.propOpenButton.Location = new System.Drawing.Point(27, 350);
             this.propOpenButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.propOpenButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
             this.propOpenButton.Name = "propOpenButton";
@@ -190,86 +172,10 @@
             this.broadcastsPlaybackPlanDataGridView.Location = new System.Drawing.Point(27, 71);
             this.broadcastsPlaybackPlanDataGridView.Name = "broadcastsPlaybackPlanDataGridView";
             this.broadcastsPlaybackPlanDataGridView.ReadOnly = true;
-            this.broadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(743, 217);
+            this.broadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(509, 272);
             this.broadcastsPlaybackPlanDataGridView.TabIndex = 15;
+            this.broadcastsPlaybackPlanDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.broadcastsPlaybackPlanDataGridView_CellMouseClick);
             this.broadcastsPlaybackPlanDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.broadcastsPlaybackPlanDataGridView_CellMouseDoubleClick);
-            // 
-            // broadcastsPlaybackPlan_DetailedTableAdapter
-            // 
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.ClearBeforeFill = true;
-            // 
-            // broadcastsPlaybackPlan_DetailedDataGridView
-            // 
-            this.broadcastsPlaybackPlan_DetailedDataGridView.AutoGenerateColumns = false;
-            this.broadcastsPlaybackPlan_DetailedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.broadcastsPlaybackPlan_DetailedDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.broadcastsPlaybackPlan_DetailedDataGridView.DataSource = this.broadcastsPlaybackPlan_DetailedBindingSource;
-            this.broadcastsPlaybackPlan_DetailedDataGridView.Location = new System.Drawing.Point(27, 71);
-            this.broadcastsPlaybackPlan_DetailedDataGridView.Name = "broadcastsPlaybackPlan_DetailedDataGridView";
-            this.broadcastsPlaybackPlan_DetailedDataGridView.ReadOnly = true;
-            this.broadcastsPlaybackPlan_DetailedDataGridView.Size = new System.Drawing.Size(743, 217);
-            this.broadcastsPlaybackPlan_DetailedDataGridView.TabIndex = 15;
-            this.broadcastsPlaybackPlan_DetailedDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.broadcastsPlaybackPlan_DetailedDataGridView_CellMouseDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Категория";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Категория";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Внешний канал";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Внешний канал";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Дата воспроизведения";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Дата воспроизведения";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Длительность";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Длительность";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Частота кадров";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Частота кадров";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Автор";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Автор";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -302,17 +208,118 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 180;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(554, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Длительность";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(554, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 22);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Частота кадров";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(554, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 22);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Автор";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(554, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 22);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "ID";
+            // 
+            // iDLabel1
+            // 
+            this.iDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.broadcastsPlaybackPlanBindingSource, "ID", true));
+            this.iDLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iDLabel1.Location = new System.Drawing.Point(555, 110);
+            this.iDLabel1.Name = "iDLabel1";
+            this.iDLabel1.Size = new System.Drawing.Size(100, 23);
+            this.iDLabel1.TabIndex = 21;
+            this.iDLabel1.Text = "label6";
+            // 
+            // video_EditingBindingSource
+            // 
+            this.video_EditingBindingSource.DataMember = "Video_Editing";
+            this.video_EditingBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            // 
+            // video_EditingTableAdapter
+            // 
+            this.video_EditingTableAdapter.ClearBeforeFill = true;
+            // 
+            // durationLabel1
+            // 
+            this.durationLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Duration", true));
+            this.durationLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLabel1.Location = new System.Drawing.Point(555, 170);
+            this.durationLabel1.Name = "durationLabel1";
+            this.durationLabel1.Size = new System.Drawing.Size(100, 23);
+            this.durationLabel1.TabIndex = 22;
+            this.durationLabel1.Text = "label6";
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=DESKTOP-K054NBE;Initial Catalog=\"БД Телестудии\";Integrated Security=T" +
+    "rue;Pooling=False;Encrypt=True;TrustServerCertificate=True";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            // 
+            // framerateLabel1
+            // 
+            this.framerateLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Framerate", true));
+            this.framerateLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.framerateLabel1.Location = new System.Drawing.Point(555, 230);
+            this.framerateLabel1.Name = "framerateLabel1";
+            this.framerateLabel1.Size = new System.Drawing.Size(100, 23);
+            this.framerateLabel1.TabIndex = 23;
+            this.framerateLabel1.Text = "label6";
+            // 
+            // authorLabel1
+            // 
+            this.authorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Author", true));
+            this.authorLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorLabel1.Location = new System.Drawing.Point(555, 292);
+            this.authorLabel1.Name = "authorLabel1";
+            this.authorLabel1.Size = new System.Drawing.Size(100, 23);
+            this.authorLabel1.TabIndex = 24;
+            this.authorLabel1.Text = "label6";
+            // 
             // BroadcastPlaybackPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(795, 412);
-            this.Controls.Add(this.broadcastsPlaybackPlan_DetailedDataGridView);
+            this.ClientSize = new System.Drawing.Size(801, 454);
+            this.Controls.Add(this.authorLabel1);
+            this.Controls.Add(this.framerateLabel1);
+            this.Controls.Add(this.durationLabel1);
+            this.Controls.Add(this.iDLabel1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.broadcastsPlaybackPlanDataGridView);
             this.Controls.Add(this.propOpenButton);
             this.Controls.Add(this.openProgressButton);
-            this.Controls.Add(this.detailedTableCheckBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -326,9 +333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlan_DetailedDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video_EditingBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,26 +348,26 @@
         private БД_ТелестудииDataSetTableAdapters.VideomaterialTableAdapter videomaterialTableAdapter;
         private System.Windows.Forms.BindingSource videomaterialBindingSource1;
         private System.Windows.Forms.BindingSource бДТелестудииDataSetBindingSource;
-        private System.Windows.Forms.CheckBox detailedTableCheckBox;
         private System.Windows.Forms.BindingSource broadcastsPlaybackPlanBindingSource;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource broadcastsPlaybackPlan_DetailedBindingSource;
         private RoundButton openProgressButton;
         private RoundButton propOpenButton;
         private БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter broadcastsPlaybackPlanTableAdapter;
         private System.Windows.Forms.DataGridView broadcastsPlaybackPlanDataGridView;
-        private БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlan_DetailedTableAdapter broadcastsPlaybackPlan_DetailedTableAdapter;
-        private System.Windows.Forms.DataGridView broadcastsPlaybackPlan_DetailedDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label iDLabel1;
+        private System.Windows.Forms.BindingSource video_EditingBindingSource;
+        private БД_ТелестудииDataSetTableAdapters.Video_EditingTableAdapter video_EditingTableAdapter;
+        private System.Windows.Forms.Label durationLabel1;
+        private System.Data.SqlClient.SqlConnection sqlConnection1;
+        private System.Windows.Forms.Label framerateLabel1;
+        private System.Windows.Forms.Label authorLabel1;
     }
 }
