@@ -58,6 +58,7 @@
             this.eventTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.EventTableAdapter();
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
             this.GetEventInfoCommand = new System.Data.SqlClient.SqlCommand();
+            this.UpdateVideoEditingSumDurationCommand = new System.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transitionDurationUpDown)).BeginInit();
@@ -320,15 +321,16 @@
             this.ChangeEventCommand.CommandType = System.Data.CommandType.StoredProcedure;
             this.ChangeEventCommand.Connection = this.sqlConnection1;
             this.ChangeEventCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
-            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@videoID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@startTime", System.Data.SqlDbType.Time),
             new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@transitionType", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@description", System.Data.SqlDbType.VarChar),
-            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar)});
+            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar),
+            new System.Data.SqlClient.SqlParameter("@videoTitle", System.Data.SqlDbType.VarChar),
+            new System.Data.SqlClient.SqlParameter("@editingID", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
             // 
             // eventBindingSource
             // 
@@ -358,19 +360,24 @@
             this.GetEventInfoCommand.CommandType = System.Data.CommandType.StoredProcedure;
             this.GetEventInfoCommand.Connection = this.sqlConnection1;
             this.GetEventInfoCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
-            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@videoID", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@time", System.Data.SqlDbType.Time),
-            new System.Data.SqlClient.SqlParameter("@playDuration", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@startTime", System.Data.SqlDbType.Time, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@transitionType", System.Data.SqlDbType.VarChar, 25, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@description", System.Data.SqlDbType.VarChar, 125, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar, 35, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@res", System.Data.SqlDbType.VarChar, 10, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@outID", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
+            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar, 35, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
+            // 
+            // UpdateVideoEditingSumDurationCommand
+            // 
+            this.UpdateVideoEditingSumDurationCommand.CommandText = "UpdateVideoEditingSumDuration";
+            this.UpdateVideoEditingSumDurationCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            this.UpdateVideoEditingSumDurationCommand.Connection = this.sqlConnection1;
+            this.UpdateVideoEditingSumDurationCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@editingID", System.Data.SqlDbType.Int)});
             // 
             // EditEvent
             // 
@@ -446,5 +453,6 @@
         private БД_ТелестудииDataSetTableAdapters.EventTableAdapter eventTableAdapter;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Data.SqlClient.SqlCommand GetEventInfoCommand;
+        private System.Data.SqlClient.SqlCommand UpdateVideoEditingSumDurationCommand;
     }
 }

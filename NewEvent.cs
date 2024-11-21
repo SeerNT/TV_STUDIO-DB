@@ -95,11 +95,18 @@ namespace БД_Телестудии
                        DBNull.Value;
                 }
 
+                UpdateVideoEditingSumDurationCommand.Parameters["@broadcastID"].Value = 
+                    editForm.broadcastID;
+                UpdateVideoEditingSumDurationCommand.Parameters["@videoID"].Value = editForm.videoID;
+                UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value = 0;
+
                 sqlConnection1.Open();
 
                 AddNewEventCommand.ExecuteNonQuery();
+                UpdateVideoEditingSumDurationCommand.ExecuteNonQuery();
 
                 sqlConnection1.Close();
+
 
                 MessageBox.Show("Событие было добавлено",
                         "Успешно", MessageBoxButtons.OK,

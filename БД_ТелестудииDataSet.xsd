@@ -555,6 +555,30 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EventViewTableAdapter" GeneratorDataComponentClassName="EventViewTableAdapter" Name="EventView" UserDataComponentName="EventViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.EventView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Event, Start_time, Playback_duration, Transition_type, Recording_source, Transition_duration, Delay_duration, Event_description, ID_Broadcast FROM EventView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Event" DataSetColumn="ID_Event" />
+              <Mapping SourceColumn="Start_time" DataSetColumn="Start_time" />
+              <Mapping SourceColumn="Playback_duration" DataSetColumn="Playback_duration" />
+              <Mapping SourceColumn="Transition_type" DataSetColumn="Transition_type" />
+              <Mapping SourceColumn="Recording_source" DataSetColumn="Recording_source" />
+              <Mapping SourceColumn="Transition_duration" DataSetColumn="Transition_duration" />
+              <Mapping SourceColumn="Delay_duration" DataSetColumn="Delay_duration" />
+              <Mapping SourceColumn="Event_description" DataSetColumn="Event_description" />
+              <Mapping SourceColumn="ID_Broadcast" DataSetColumn="ID_Broadcast" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="БД_ТелестудииConnectionString (Settings)" DbObjectName="[БД Телестудии].dbo.NewUser" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="NewUser" MethodsParameterType="CLR" Modifier="Public" Name="NewUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="NewUser">
@@ -811,31 +835,64 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UnusedVideomaterials" msprop:Generator_RowEvHandlerName="UnusedVideomaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="UnusedVideomaterialsRowDeleted" msprop:Generator_RowDeletingName="UnusedVideomaterialsRowDeleting" msprop:Generator_RowEvArgName="UnusedVideomaterialsRowChangeEvent" msprop:Generator_TablePropName="UnusedVideomaterials" msprop:Generator_RowChangedName="UnusedVideomaterialsRowChanged" msprop:Generator_RowChangingName="UnusedVideomaterialsRowChanging" msprop:Generator_TableClassName="UnusedVideomaterialsDataTable" msprop:Generator_RowClassName="UnusedVideomaterialsRow" msprop:Generator_TableVarName="tableUnusedVideomaterials" msprop:Generator_UserTableName="UnusedVideomaterials">
+        <xs:element name="UnusedVideomaterials" msprop:Generator_RowClassName="UnusedVideomaterialsRow" msprop:Generator_RowEvHandlerName="UnusedVideomaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="UnusedVideomaterialsRowDeleted" msprop:Generator_RowDeletingName="UnusedVideomaterialsRowDeleting" msprop:Generator_RowEvArgName="UnusedVideomaterialsRowChangeEvent" msprop:Generator_TablePropName="UnusedVideomaterials" msprop:Generator_RowChangedName="UnusedVideomaterialsRowChanged" msprop:Generator_UserTableName="UnusedVideomaterials" msprop:Generator_RowChangingName="UnusedVideomaterialsRowChanging" msprop:Generator_TableClassName="UnusedVideomaterialsDataTable" msprop:Generator_TableVarName="tableUnusedVideomaterials">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание">
+              <xs:element name="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="125" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Дата_x0020_загрузки" msprop:Generator_ColumnPropNameInRow="Дата_загрузки" msprop:Generator_ColumnPropNameInTable="Дата_загрузкиColumn" msprop:Generator_ColumnVarNameInTable="columnДата_загрузки" msprop:Generator_UserColumnName="Дата загрузки" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_загрузки" msprop:Generator_UserColumnName="Дата загрузки" msprop:Generator_ColumnPropNameInTable="Дата_загрузкиColumn" msprop:Generator_ColumnPropNameInRow="Дата_загрузки" msprop:Generator_ColumnVarNameInTable="columnДата_загрузки" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UsedVideomaterials" msprop:Generator_RowEvHandlerName="UsedVideomaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="UsedVideomaterialsRowDeleted" msprop:Generator_RowDeletingName="UsedVideomaterialsRowDeleting" msprop:Generator_RowEvArgName="UsedVideomaterialsRowChangeEvent" msprop:Generator_TablePropName="UsedVideomaterials" msprop:Generator_RowChangedName="UsedVideomaterialsRowChanged" msprop:Generator_RowChangingName="UsedVideomaterialsRowChanging" msprop:Generator_TableClassName="UsedVideomaterialsDataTable" msprop:Generator_RowClassName="UsedVideomaterialsRow" msprop:Generator_TableVarName="tableUsedVideomaterials" msprop:Generator_UserTableName="UsedVideomaterials">
+        <xs:element name="UsedVideomaterials" msprop:Generator_RowClassName="UsedVideomaterialsRow" msprop:Generator_RowEvHandlerName="UsedVideomaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="UsedVideomaterialsRowDeleted" msprop:Generator_RowDeletingName="UsedVideomaterialsRowDeleting" msprop:Generator_RowEvArgName="UsedVideomaterialsRowChangeEvent" msprop:Generator_TablePropName="UsedVideomaterials" msprop:Generator_RowChangedName="UsedVideomaterialsRowChanged" msprop:Generator_UserTableName="UsedVideomaterials" msprop:Generator_RowChangingName="UsedVideomaterialsRowChanging" msprop:Generator_TableClassName="UsedVideomaterialsDataTable" msprop:Generator_TableVarName="tableUsedVideomaterials">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание">
+              <xs:element name="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="125" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Дата_x0020_загрузки" msprop:Generator_ColumnPropNameInRow="Дата_загрузки" msprop:Generator_ColumnPropNameInTable="Дата_загрузкиColumn" msprop:Generator_ColumnVarNameInTable="columnДата_загрузки" msprop:Generator_UserColumnName="Дата загрузки" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_загрузки" msprop:Generator_UserColumnName="Дата загрузки" msprop:Generator_ColumnPropNameInTable="Дата_загрузкиColumn" msprop:Generator_ColumnPropNameInRow="Дата_загрузки" msprop:Generator_ColumnVarNameInTable="columnДата_загрузки" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EventView" msprop:Generator_RowEvHandlerName="EventViewRowChangeEventHandler" msprop:Generator_RowDeletedName="EventViewRowDeleted" msprop:Generator_RowDeletingName="EventViewRowDeleting" msprop:Generator_RowEvArgName="EventViewRowChangeEvent" msprop:Generator_TablePropName="EventView" msprop:Generator_RowChangedName="EventViewRowChanged" msprop:Generator_RowChangingName="EventViewRowChanging" msprop:Generator_TableClassName="EventViewDataTable" msprop:Generator_RowClassName="EventViewRow" msprop:Generator_TableVarName="tableEventView" msprop:Generator_UserTableName="EventView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Event" msprop:Generator_ColumnPropNameInRow="ID_Event" msprop:Generator_ColumnPropNameInTable="ID_EventColumn" msprop:Generator_ColumnVarNameInTable="columnID_Event" msprop:Generator_UserColumnName="ID_Event" type="xs:short" />
+              <xs:element name="Start_time" msprop:Generator_ColumnPropNameInRow="Start_time" msprop:Generator_ColumnPropNameInTable="Start_timeColumn" msprop:Generator_ColumnVarNameInTable="columnStart_time" msprop:Generator_UserColumnName="Start_time" type="xs:duration" />
+              <xs:element name="Playback_duration" msprop:Generator_ColumnPropNameInRow="Playback_duration" msprop:Generator_ColumnPropNameInTable="Playback_durationColumn" msprop:Generator_ColumnVarNameInTable="columnPlayback_duration" msprop:Generator_UserColumnName="Playback_duration" type="xs:int" />
+              <xs:element name="Transition_type" msprop:Generator_ColumnPropNameInRow="Transition_type" msprop:Generator_ColumnPropNameInTable="Transition_typeColumn" msprop:Generator_ColumnVarNameInTable="columnTransition_type" msprop:Generator_UserColumnName="Transition_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Recording_source" msprop:Generator_ColumnPropNameInRow="Recording_source" msprop:Generator_ColumnPropNameInTable="Recording_sourceColumn" msprop:Generator_ColumnVarNameInTable="columnRecording_source" msprop:Generator_UserColumnName="Recording_source" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transition_duration" msprop:Generator_ColumnPropNameInRow="Transition_duration" msprop:Generator_ColumnPropNameInTable="Transition_durationColumn" msprop:Generator_ColumnVarNameInTable="columnTransition_duration" msprop:Generator_UserColumnName="Transition_duration" type="xs:int" minOccurs="0" />
+              <xs:element name="Delay_duration" msprop:Generator_ColumnPropNameInRow="Delay_duration" msprop:Generator_ColumnPropNameInTable="Delay_durationColumn" msprop:Generator_ColumnVarNameInTable="columnDelay_duration" msprop:Generator_UserColumnName="Delay_duration" type="xs:int" minOccurs="0" />
+              <xs:element name="Event_description" msprop:Generator_ColumnPropNameInRow="Event_description" msprop:Generator_ColumnPropNameInTable="Event_descriptionColumn" msprop:Generator_ColumnVarNameInTable="columnEvent_description" msprop:Generator_UserColumnName="Event_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="125" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_Broadcast" msprop:Generator_ColumnPropNameInRow="ID_Broadcast" msprop:Generator_ColumnPropNameInTable="ID_BroadcastColumn" msprop:Generator_ColumnVarNameInTable="columnID_Broadcast" msprop:Generator_UserColumnName="ID_Broadcast" type="xs:short" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -874,15 +931,19 @@ SELECT userLogin, userPassword, userPosition FROM Auth WHERE (userLogin = @userL
       <xs:selector xpath=".//mstns:Auth" />
       <xs:field xpath="mstns:userLogin" />
     </xs:unique>
+    <xs:unique name="EventView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EventView" />
+      <xs:field xpath="mstns:ID_Event" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Broadcast__ID_Ca__32AB8735" msdata:parent="Category" msdata:child="Broadcast" msdata:parentkey="ID_Category" msdata:childkey="ID_Category" msprop:Generator_UserParentTable="Category" msprop:Generator_UserChildTable="Broadcast" msprop:Generator_RelationVarName="relationFK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ChildPropName="GetBroadcastRows" msprop:Generator_UserRelationName="FK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ParentPropName="CategoryRow" />
-      <msdata:Relationship name="FK__Creation___ID_Vi__2645B050" msdata:parent="Videomaterial" msdata:child="Creation_Stage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Creation_Stage" msprop:Generator_RelationVarName="relationFK__Creation___ID_Vi__2645B050" msprop:Generator_ChildPropName="GetCreation_StageRows" msprop:Generator_UserRelationName="FK__Creation___ID_Vi__2645B050" msprop:Generator_ParentPropName="VideomaterialRow" />
-      <msdata:Relationship name="FK__Event__ID_Broadc__3E1D39E1" msdata:parent="Broadcast" msdata:child="Event" msdata:parentkey="ID_Broadcast" msdata:childkey="ID_Broadcast" msprop:Generator_UserParentTable="Broadcast" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_ParentPropName="BroadcastRow" msprop:Generator_UserRelationName="FK__Event__ID_Broadc__3E1D39E1" />
-      <msdata:Relationship name="FK__Event__ID_Videom__3F115E1A" msdata:parent="Videomaterial" msdata:child="Event" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Videom__3F115E1A" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_UserRelationName="FK__Event__ID_Videom__3F115E1A" msprop:Generator_ParentPropName="VideomaterialRow" />
-      <msdata:Relationship name="FK__Videomate__ID_Ed__2FCF1A8A" msdata:parent="Video_Editing" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Editing" msdata:childkey="ID_Editing" msprop:Generator_UserParentTable="Video_Editing" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_ParentPropName="Video_EditingRow" msprop:Generator_UserRelationName="FK__Videomate__ID_Ed__2FCF1A8A" />
-      <msdata:Relationship name="FK__Videomate__ID_Vi__2EDAF651" msdata:parent="Videomaterial" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Videomate__ID_Vi__2EDAF651" />
+      <msdata:Relationship name="FK__Broadcast__ID_Ca__32AB8735" msdata:parent="Category" msdata:child="Broadcast" msdata:parentkey="ID_Category" msdata:childkey="ID_Category" msprop:Generator_UserParentTable="Category" msprop:Generator_UserChildTable="Broadcast" msprop:Generator_RelationVarName="relationFK__Broadcast__ID_Ca__32AB8735" msprop:Generator_ChildPropName="GetBroadcastRows" msprop:Generator_ParentPropName="CategoryRow" msprop:Generator_UserRelationName="FK__Broadcast__ID_Ca__32AB8735" />
+      <msdata:Relationship name="FK__Creation___ID_Vi__2645B050" msdata:parent="Videomaterial" msdata:child="Creation_Stage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Creation_Stage" msprop:Generator_RelationVarName="relationFK__Creation___ID_Vi__2645B050" msprop:Generator_ChildPropName="GetCreation_StageRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Creation___ID_Vi__2645B050" />
+      <msdata:Relationship name="FK__Event__ID_Broadc__3E1D39E1" msdata:parent="Broadcast" msdata:child="Event" msdata:parentkey="ID_Broadcast" msdata:childkey="ID_Broadcast" msprop:Generator_UserParentTable="Broadcast" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_UserRelationName="FK__Event__ID_Broadc__3E1D39E1" msprop:Generator_ParentPropName="BroadcastRow" />
+      <msdata:Relationship name="FK__Event__ID_Videom__3F115E1A" msdata:parent="Videomaterial" msdata:child="Event" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Event" msprop:Generator_RelationVarName="relationFK__Event__ID_Videom__3F115E1A" msprop:Generator_ChildPropName="GetEventRows" msprop:Generator_ParentPropName="VideomaterialRow" msprop:Generator_UserRelationName="FK__Event__ID_Videom__3F115E1A" />
+      <msdata:Relationship name="FK__Videomate__ID_Ed__2FCF1A8A" msdata:parent="Video_Editing" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Editing" msdata:childkey="ID_Editing" msprop:Generator_UserParentTable="Video_Editing" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_UserRelationName="FK__Videomate__ID_Ed__2FCF1A8A" msprop:Generator_ParentPropName="Video_EditingRow" />
+      <msdata:Relationship name="FK__Videomate__ID_Vi__2EDAF651" msdata:parent="Videomaterial" msdata:child="Videomaterial_Usage" msdata:parentkey="ID_Videomaterial" msdata:childkey="ID_Videomaterial" msprop:Generator_UserParentTable="Videomaterial" msprop:Generator_UserChildTable="Videomaterial_Usage" msprop:Generator_RelationVarName="relationFK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ChildPropName="GetVideomaterial_UsageRows" msprop:Generator_UserRelationName="FK__Videomate__ID_Vi__2EDAF651" msprop:Generator_ParentPropName="VideomaterialRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

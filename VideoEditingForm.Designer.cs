@@ -29,24 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoEditingForm));
             this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.EventTableAdapter();
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
-            this.eventBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.addButton = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.eventBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.eventDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +45,23 @@
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GetBroadcastAndVideoIDByTitleCommand = new System.Data.SqlClient.SqlCommand();
             this.AddEventButton = new System.Windows.Forms.Button();
+            this.eventViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventViewTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.EventViewTableAdapter();
+            this.eventViewDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventBindingNavigator)).BeginInit();
-            this.eventBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventViewDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // бД_ТелестудииDataSet
@@ -93,132 +91,6 @@
             this.tableAdapterManager.Videomaterial_UsageTableAdapter = null;
             this.tableAdapterManager.VideomaterialTableAdapter = null;
             // 
-            // eventBindingNavigator
-            // 
-            this.eventBindingNavigator.AddNewItem = this.addButton;
-            this.eventBindingNavigator.BindingSource = this.eventBindingSource;
-            this.eventBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.eventBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.eventBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorDeleteItem,
-            this.eventBindingNavigatorSaveItem,
-            this.addButton});
-            this.eventBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.eventBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.eventBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.eventBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.eventBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.eventBindingNavigator.Name = "eventBindingNavigator";
-            this.eventBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.eventBindingNavigator.Size = new System.Drawing.Size(913, 25);
-            this.eventBindingNavigator.TabIndex = 17;
-            this.eventBindingNavigator.Text = "bindingNavigator1";
-            this.eventBindingNavigator.Click += new System.EventHandler(this.eventBindingNavigator_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
-            this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(23, 22);
-            this.addButton.Text = "Добавить событие";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // eventBindingNavigatorSaveItem
-            // 
-            this.eventBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.eventBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("eventBindingNavigatorSaveItem.Image")));
-            this.eventBindingNavigatorSaveItem.Name = "eventBindingNavigatorSaveItem";
-            this.eventBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.eventBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.eventBindingNavigatorSaveItem.Click += new System.EventHandler(this.eventBindingNavigatorSaveItem_Click);
-            // 
             // eventDataGridView
             // 
             this.eventDataGridView.AllowUserToAddRows = false;
@@ -233,7 +105,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.eventDataGridView.DataSource = this.eventBindingSource;
-            this.eventDataGridView.Location = new System.Drawing.Point(12, 73);
+            this.eventDataGridView.Location = new System.Drawing.Point(12, 44);
             this.eventDataGridView.Name = "eventDataGridView";
             this.eventDataGridView.Size = new System.Drawing.Size(896, 408);
             this.eventDataGridView.TabIndex = 17;
@@ -291,7 +163,7 @@
             // 
             this.broadcastTitleLabel.AutoSize = true;
             this.broadcastTitleLabel.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.broadcastTitleLabel.Location = new System.Drawing.Point(12, 37);
+            this.broadcastTitleLabel.Location = new System.Drawing.Point(12, 8);
             this.broadcastTitleLabel.Name = "broadcastTitleLabel";
             this.broadcastTitleLabel.Size = new System.Drawing.Size(56, 18);
             this.broadcastTitleLabel.TabIndex = 18;
@@ -316,7 +188,7 @@
             // AddEventButton
             // 
             this.AddEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEventButton.Location = new System.Drawing.Point(15, 495);
+            this.AddEventButton.Location = new System.Drawing.Point(15, 466);
             this.AddEventButton.Name = "AddEventButton";
             this.AddEventButton.Size = new System.Drawing.Size(158, 53);
             this.AddEventButton.TabIndex = 19;
@@ -324,16 +196,101 @@
             this.AddEventButton.UseVisualStyleBackColor = true;
             this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
             // 
+            // eventViewBindingSource
+            // 
+            this.eventViewBindingSource.DataMember = "EventView";
+            this.eventViewBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            // 
+            // eventViewTableAdapter
+            // 
+            this.eventViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // eventViewDataGridView
+            // 
+            this.eventViewDataGridView.AutoGenerateColumns = false;
+            this.eventViewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventViewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.eventViewDataGridView.DataSource = this.eventViewBindingSource;
+            this.eventViewDataGridView.Location = new System.Drawing.Point(15, 362);
+            this.eventViewDataGridView.Name = "eventViewDataGridView";
+            this.eventViewDataGridView.ReadOnly = true;
+            this.eventViewDataGridView.Size = new System.Drawing.Size(135, 90);
+            this.eventViewDataGridView.TabIndex = 19;
+            this.eventViewDataGridView.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Event";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Event";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Start_time";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Start_time";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Playback_duration";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Playback_duration";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Transition_type";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Transition_type";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Recording_source";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Recording_source";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Transition_duration";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Transition_duration";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Delay_duration";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Delay_duration";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Event_description";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Event_description";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "ID_Broadcast";
+            this.dataGridViewTextBoxColumn16.HeaderText = "ID_Broadcast";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
             // VideoEditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(913, 560);
+            this.ClientSize = new System.Drawing.Size(928, 527);
+            this.Controls.Add(this.eventViewDataGridView);
             this.Controls.Add(this.AddEventButton);
             this.Controls.Add(this.broadcastTitleLabel);
             this.Controls.Add(this.eventDataGridView);
-            this.Controls.Add(this.eventBindingNavigator);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -343,10 +300,9 @@
             this.Load += new System.EventHandler(this.VideoEditingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventBindingNavigator)).EndInit();
-            this.eventBindingNavigator.ResumeLayout(false);
-            this.eventBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventViewDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,22 +313,13 @@
         private System.Windows.Forms.BindingSource eventBindingSource;
         private БД_ТелестудииDataSetTableAdapters.EventTableAdapter eventTableAdapter;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator eventBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton eventBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView eventDataGridView;
         private System.Windows.Forms.Label broadcastTitleLabel;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private System.Data.SqlClient.SqlCommand GetBroadcastAndVideoIDByTitleCommand;
+        private System.Windows.Forms.Button AddEventButton;
+        private System.Windows.Forms.BindingSource eventViewBindingSource;
+        private БД_ТелестудииDataSetTableAdapters.EventViewTableAdapter eventViewTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -380,7 +327,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.Button AddEventButton;
-        private System.Windows.Forms.ToolStripButton addButton;
+        private System.Windows.Forms.DataGridView eventViewDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
     }
 }

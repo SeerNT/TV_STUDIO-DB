@@ -56,6 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.AddNewEventCommand = new System.Data.SqlClient.SqlCommand();
+            this.UpdateVideoEditingSumDurationCommand = new System.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
@@ -335,7 +336,18 @@
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@description", System.Data.SqlDbType.VarChar),
-            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar)});
+            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar),
+            new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
+            // 
+            // UpdateVideoEditingSumDurationCommand
+            // 
+            this.UpdateVideoEditingSumDurationCommand.CommandText = "UpdateVideoEditingSumDuration";
+            this.UpdateVideoEditingSumDurationCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            this.UpdateVideoEditingSumDurationCommand.Connection = this.sqlConnection1;
+            this.UpdateVideoEditingSumDurationCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@videoID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@editingID", System.Data.SqlDbType.Int)});
             // 
             // NewEvent
             // 
@@ -408,5 +420,6 @@
         private System.Windows.Forms.Label label1;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private System.Data.SqlClient.SqlCommand AddNewEventCommand;
+        private System.Data.SqlClient.SqlCommand UpdateVideoEditingSumDurationCommand;
     }
 }

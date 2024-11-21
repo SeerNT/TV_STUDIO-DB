@@ -28,10 +28,7 @@ namespace БД_Телестудии
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
             this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
 
-            GetEventInfoCommand.Parameters["@broadcastID"].Value = editForm.broadcastID;
-            GetEventInfoCommand.Parameters["@videoID"].Value = editForm.videoID;
-            GetEventInfoCommand.Parameters["@time"].Value = editForm.baseTime;
-            GetEventInfoCommand.Parameters["@playDuration"].Value = editForm.baseDuration;
+            GetEventInfoCommand.Parameters["@eventID"].Value = editForm.eventID;
 
             sqlConnection1.Open();
 
@@ -86,9 +83,7 @@ namespace БД_Телестудии
             }
             else
             {
-                ChangeEventCommand.Parameters["@broadcastID"].Value = editForm.broadcastID;
-
-                ChangeEventCommand.Parameters["@videoID"].Value = editForm.videoID;
+                ChangeEventCommand.Parameters["@eventID"].Value = editForm.eventID;
 
                 TimeSpan ts = TimeSpan.FromSeconds(startTimePicker.Value.Second
                     + startTimePicker.Value.Minute * 60 + startTimePicker.Value.Hour * 60 * 60);
@@ -139,9 +134,23 @@ namespace БД_Телестудии
                        DBNull.Value;
                 }
 
-                sqlConnection1.Open();
+                UpdateVideoEditingSumDurationCommand.Parameters["@broadcastID"].Value = 
+                    editForm.broadcastID;
+                UpdateVideoEditingSumDurationCommand.Parameters["@eventID"].Value =
+                   editForm.eventID;
 
+                DataRowView row = (DataRowView)videoComboBox.SelectedItem;
+
+                ChangeEventCommand.Parameters["@videoTitle"].Value = row.Row[0].ToString();
+
+                sqlConnection1.Open();
+                
                 ChangeEventCommand.ExecuteNonQuery();
+
+                UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value =
+                   ChangeEventCommand.Parameters["@editingID"].Value;
+
+                UpdateVideoEditingSumDurationCommand.ExecuteNonQuery();
 
                 sqlConnection1.Close();
 
