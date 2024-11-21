@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,28 +53,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // titleTextBox
-            // 
-            this.titleTextBox.Location = new System.Drawing.Point(21, 52);
-            this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(348, 20);
-            this.titleTextBox.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Название трансляции";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 103);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 22);
             this.label2.TabIndex = 4;
@@ -113,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 190);
+            this.label3.Location = new System.Drawing.Point(12, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 22);
             this.label3.TabIndex = 8;
@@ -121,7 +102,7 @@
             // 
             // channelTextBox
             // 
-            this.channelTextBox.Location = new System.Drawing.Point(21, 235);
+            this.channelTextBox.Location = new System.Drawing.Point(16, 141);
             this.channelTextBox.Name = "channelTextBox";
             this.channelTextBox.Size = new System.Drawing.Size(255, 20);
             this.channelTextBox.TabIndex = 9;
@@ -130,7 +111,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 289);
+            this.label4.Location = new System.Drawing.Point(12, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(209, 22);
             this.label4.TabIndex = 10;
@@ -138,7 +119,7 @@
             // 
             // playDate
             // 
-            this.playDate.Location = new System.Drawing.Point(21, 331);
+            this.playDate.Location = new System.Drawing.Point(16, 237);
             this.playDate.Name = "playDate";
             this.playDate.Size = new System.Drawing.Size(200, 20);
             this.playDate.TabIndex = 11;
@@ -150,7 +131,7 @@
             this.categoryComboBox.DisplayMember = "Title";
             this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(21, 144);
+            this.categoryComboBox.Location = new System.Drawing.Point(16, 50);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(138, 21);
             this.categoryComboBox.TabIndex = 13;
@@ -173,9 +154,7 @@
             this.ChangeBroadcastCommand.CommandType = System.Data.CommandType.StoredProcedure;
             this.ChangeBroadcastCommand.Connection = this.sqlConnection1;
             this.ChangeBroadcastCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
-            new System.Data.SqlClient.SqlParameter("@video_id", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@broadcast_id", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@newTitle", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@category", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@channel", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@playDate", System.Data.SqlDbType.DateTime),
@@ -227,7 +206,7 @@
             this.changeBroadcastButton.ButtonText = "Изменить";
             this.changeBroadcastButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeBroadcastButton.ForeColor = System.Drawing.Color.White;
-            this.changeBroadcastButton.Location = new System.Drawing.Point(9, 376);
+            this.changeBroadcastButton.Location = new System.Drawing.Point(4, 282);
             this.changeBroadcastButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.changeBroadcastButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
             this.changeBroadcastButton.Name = "changeBroadcastButton";
@@ -253,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(381, 457);
+            this.ClientSize = new System.Drawing.Size(337, 357);
             this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.changeBroadcastButton);
             this.Controls.Add(this.playDate);
@@ -261,8 +240,6 @@
             this.Controls.Add(this.channelTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.titleTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -278,9 +255,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox titleTextBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private БД_ТелестудииDataSet бД_ТелестудииDataSet;
         private System.Windows.Forms.BindingSource categoryBindingSource;

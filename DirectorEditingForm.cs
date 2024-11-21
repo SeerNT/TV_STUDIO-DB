@@ -14,6 +14,7 @@ namespace БД_Телестудии
     public partial class DirectorEditingForm : Form
     {
         private Director_BroadcastPlaybackPlanForm dirForm;
+        public int mode = -1;
 
         public DirectorEditingForm(Director_BroadcastPlaybackPlanForm dirForm)
         {
@@ -42,19 +43,59 @@ namespace БД_Телестудии
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Category". При необходимости она может быть перемещена или удалена.
             this.categoryTableAdapter.Fill(this.бД_ТелестудииDataSet.Category);
 
-            titleTextBox.Text = Director_BroadcastPlaybackPlanForm.currentVideomaterialName;
+            if (mode == 2)
+            {
+                changeBroadcastButton.ButtonText = "Добавить";
 
+                categoryComboBox.SelectedIndex = 0;
+                channelTextBox.Text = "";
+                playDate.Value = DateTime.Today;
+            }
+            else if (mode == 1)
+            {
+                changeBroadcastButton.ButtonText = "Изменить";
+
+                categoryComboBox.SelectedIndex = categoryComboBox.FindStringExact(dirForm.category);
+                channelTextBox.Text = dirForm.channel;
+                playDate.Value = dirForm.date;
+            }
+        }
+
+        private void AddBroadcast()
+        {
+            sqlConnection1.Open();
+            GetLastBroadcastIdCommand.ExecuteNonQuery();
+
+            DataRowView row = (DataRowView)categoryComboBox.SelectedItem;
+
+            int newBroadcastID = (int)GetLastBroadcastIdCommand.Parameters["@last_id"].Value + 1;
+
+            AddNewBroadcastCommand.Parameters["@broadcast_id"].Value = newBroadcastID;
+            AddNewBroadcastCommand.Parameters["@category"].Value = row.Row[1].ToString();
+            AddNewBroadcastCommand.Parameters["@channel"].Value = channelTextBox.Text;
+            AddNewBroadcastCommand.Parameters["@play_date"].Value = playDate.Value;
+
+            AddNewBroadcastCommand.ExecuteNonQuery();
+
+            //AddBaseEventCommand.Parameters["@broadcastID"].Value = newBroadcastID;
+            //AddBaseEventCommand.Parameters["@videoTitle"].Value = Director_BroadcastPlaybackPlanForm.currentVideomaterialName;
+
+            //AddBaseEventCommand.ExecuteNonQuery();
+
+            sqlConnection1.Close();
+
+            MessageBox.Show("Новая трансляция была добавлена",
+            "Успешно", MessageBoxButtons.OK,
+            MessageBoxIcon.Information
+            );
+            this.Close();
         }
 
         private void ChangeExistBroadcast()
         {
-            int videoID = (int)GetIDsCommand.Parameters["@video_id"].Value;
-            int broadcastID = (int)GetIDsCommand.Parameters["@broadcast_id"].Value;
             DataRowView row = (DataRowView)categoryComboBox.SelectedItem;
 
-            ChangeBroadcastCommand.Parameters["@video_id"].Value = videoID;
-            ChangeBroadcastCommand.Parameters["@broadcast_id"].Value = broadcastID;
-            ChangeBroadcastCommand.Parameters["@newTitle"].Value = titleTextBox.Text;
+            ChangeBroadcastCommand.Parameters["@broadcast_id"].Value = dirForm.broadcastID;
             ChangeBroadcastCommand.Parameters["@category"].Value = row.Row[1].ToString();
             ChangeBroadcastCommand.Parameters["@channel"].Value = channelTextBox.Text;
             ChangeBroadcastCommand.Parameters["@playDate"].Value = playDate.Value;
@@ -71,8 +112,6 @@ namespace БД_Телестудии
                 "Успешно", MessageBoxButtons.OK,
                 MessageBoxIcon.Information
                 );
-
-                dirForm.UpdateTable();
 
                 this.Close();
             }
@@ -93,107 +132,22 @@ namespace БД_Телестудии
             }
             else
             {
-                if (titleTextBox.Text != "")
+                if (channelTextBox.Text != "")
                 {
-                    if(channelTextBox.Text != "")
+                    if(mode == 2)
                     {
-                        GetIDsCommand.Parameters["@title"].Value = Director_BroadcastPlaybackPlanForm.currentVideomaterialName;
-
-                        sqlConnection1.Open();
-                        GetIDsCommand.ExecuteNonQuery();
-                        sqlConnection1.Close();
-
-                        if (GetIDsCommand.Parameters["@broadcast_id"].Value.ToString() == "")
-                        {
-                            sqlConnection1.Open();
-                            GetLastBroadcastIdCommand.ExecuteNonQuery();
-
-                            DataRowView row = (DataRowView)categoryComboBox.SelectedItem;
-
-                            int newBroadcastID = (int)GetLastBroadcastIdCommand.Parameters["@last_id"].Value + 1;
-
-                            AddNewBroadcastCommand.Parameters["@broadcast_id"].Value = newBroadcastID; 
-                            AddNewBroadcastCommand.Parameters["@category"].Value = row.Row[1].ToString();
-                            AddNewBroadcastCommand.Parameters["@channel"].Value = channelTextBox.Text;
-                            AddNewBroadcastCommand.Parameters["@play_date"].Value = playDate.Value;
-
-                            AddNewBroadcastCommand.ExecuteNonQuery();
-
-                            if(Director_BroadcastPlaybackPlanForm.currentVideomaterialName != titleTextBox.Text)
-                            {
-                                int videoID = (int)GetIDsCommand.Parameters["@video_id"].Value;
-                                ChangeVideomaterialTitleCommand.Parameters["@video_id"].Value = videoID;
-                                ChangeVideomaterialTitleCommand.Parameters["@newTitle"].Value = titleTextBox.Text;
-
-                                ChangeVideomaterialTitleCommand.ExecuteNonQuery();
-
-                                string result = (string)ChangeVideomaterialTitleCommand.Parameters["@res"].Value;
-
-                                if (result != "GOOD")
-                                {
-                                    MessageBox.Show(
-                                        "Не удалось найти видеоматериал связанный с новой трансляцеий",
-                                        "Ошибка",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error,
-                                        MessageBoxDefaultButton.Button1,
-                                        MessageBoxOptions.DefaultDesktopOnly
-                                    );
-                                    sqlConnection1.Close();
-                                }
-                                else
-                                {
-                                    AddBaseEventCommand.Parameters["@broadcastID"].Value = newBroadcastID;
-                                    AddBaseEventCommand.Parameters["@videoTitle"].Value = titleTextBox.Text;
-
-                                    AddBaseEventCommand.ExecuteNonQuery();
-
-                                    sqlConnection1.Close();
-
-                                    MessageBox.Show("Новая трансляция была добавлена",
-                                    "Успешно", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information
-                                    );
-                                    this.Close();
-                                }
-                            }
-                            else
-                            {
-                                AddBaseEventCommand.Parameters["@broadcastID"].Value = newBroadcastID;
-                                AddBaseEventCommand.Parameters["@videoTitle"].Value = Director_BroadcastPlaybackPlanForm.currentVideomaterialName;
-
-                                AddBaseEventCommand.ExecuteNonQuery();
-
-                                sqlConnection1.Close();
-
-                                MessageBox.Show("Новая трансляция была добавлена",
-                                "Успешно", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
-                                );
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            ChangeExistBroadcast();
-                        }
+                        AddBroadcast();
                     }
-                    else
+                    else if(mode == 1)
                     {
-                        MessageBox.Show(
-                                "Название канала не может быть пустым",
-                                "Ошибка",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error,
-                                MessageBoxDefaultButton.Button1,
-                                MessageBoxOptions.DefaultDesktopOnly
-                            );
+                        ChangeExistBroadcast();
                     }
+                    dirForm.UpdateTable();
                 }
                 else
                 {
                     MessageBox.Show(
-                            "Название трансляции не может быть пустым",
+                            "Название канала не может быть пустым",
                             "Ошибка",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error,

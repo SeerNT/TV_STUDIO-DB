@@ -23,10 +23,10 @@ namespace БД_Телестудии
 
         private void EditEvent_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
+            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Event". При необходимости она может быть перемещена или удалена.
             this.eventTableAdapter.Fill(this.бД_ТелестудииDataSet.Event);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
 
             GetEventInfoCommand.Parameters["@eventID"].Value = editForm.eventID;
 
@@ -141,7 +141,7 @@ namespace БД_Телестудии
 
                 DataRowView row = (DataRowView)videoComboBox.SelectedItem;
 
-                ChangeEventCommand.Parameters["@videoTitle"].Value = row.Row[0].ToString();
+                ChangeEventCommand.Parameters["@videoID"].Value = row.Row[0].ToString();
 
                 sqlConnection1.Open();
                 

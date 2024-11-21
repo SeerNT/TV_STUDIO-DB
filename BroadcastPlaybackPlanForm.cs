@@ -17,6 +17,9 @@ namespace БД_Телестудии
         private EditorProgressForm editorProgressForm;
         private VideomaterialProperty videomaterialPropertyForm;
 
+        private int broadcastID;
+
+
         public BroadcastPlaybackPlanForm()
         {
             InitializeComponent();
@@ -53,14 +56,8 @@ namespace БД_Телестудии
 
         private void editBroadcastButton_Click(object sender, EventArgs e)
         {
-            new VideoEditingForm().Show();
+            
         }
-
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            currentVideomaterialName = comboBox1.Text;
-        }
-
 
         private void detailedTableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -94,6 +91,26 @@ namespace БД_Телестудии
 
             videomaterialPropertyForm = new VideomaterialProperty();
             videomaterialPropertyForm.Show();
+        }
+
+        private void broadcastsPlaybackPlanDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            {
+                broadcastID = int.Parse(broadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                new VideoEditingForm(broadcastID).Show();
+            }
+        }
+
+        private void broadcastsPlaybackPlan_DetailedDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (broadcastsPlaybackPlan_DetailedDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
+            {
+                broadcastID = int.Parse(broadcastsPlaybackPlan_DetailedDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                new VideoEditingForm(broadcastID).Show();
+            }
         }
     }
 }

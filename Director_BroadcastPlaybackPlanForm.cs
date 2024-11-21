@@ -13,45 +13,27 @@ namespace БД_Телестудии
 {
     public partial class Director_BroadcastPlaybackPlanForm : Form
     {
-        public static string currentVideomaterialName;
-
         private DirectorEditingForm directorEditingForm;
+
+        public string category;
+        public string channel;
+        public DateTime date;
+        public int broadcastID;
 
         public Director_BroadcastPlaybackPlanForm()
         {
             InitializeComponent();
         }
 
-        private void ShowBroadcastsPlan()
-        {
-            broadcastsPlaybackPlanDataGridView.Visible = true;
-            broadcastsPlaybackPlan_DetailedDataGridView.Visible = false;
-        }
-
-        private void ShowBroadcastsPlan_Detailed()
-        {
-            broadcastsPlaybackPlanDataGridView.Visible = false;
-            broadcastsPlaybackPlan_DetailedDataGridView.Visible = true;
-        }
-
         public void UpdateTable()
         {
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
-            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
+            this.director_BroadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.Director_BroadcastsPlaybackPlan);
         }
 
         private void BroadcastPlaybackPlanForm_Load(object sender, EventArgs e)
         {
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
-            this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
-
-            ShowBroadcastsPlan();
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Director_BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
+            this.director_BroadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.Director_BroadcastsPlaybackPlan);
         }
 
         private void BroadcastPlaybackPlanForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,30 +41,38 @@ namespace БД_Телестудии
             Application.Exit();
         }
 
-        private void editBroadcastButton_Click(object sender, EventArgs e)
+        private void addBroadcastButton_Click(object sender, EventArgs e)
         {
             if (directorEditingForm != null)
                 directorEditingForm.Close();
 
             directorEditingForm = new DirectorEditingForm(this);
+            directorEditingForm.mode = 2;
             directorEditingForm.Show();
         }
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        private void director_BroadcastsPlaybackPlanDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            currentVideomaterialName = comboBox1.Text;
-        }
-
-
-        private void detailedTableCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if(detailedTableCheckBox.Checked)
+            if (director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
             {
-                ShowBroadcastsPlan_Detailed();
-            }
-            else
-            {
-                ShowBroadcastsPlan();
+                broadcastID = int.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                    Cells[0].Value.ToString());
+
+                category = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                    Cells[1].Value.ToString();
+
+                channel = director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                    Cells[2].Value.ToString();
+
+                date = DateTime.Parse(director_BroadcastsPlaybackPlanDataGridView.Rows[e.RowIndex].
+                    Cells[3].Value.ToString());
+
+                if (directorEditingForm != null)
+                    directorEditingForm.Close();
+
+                directorEditingForm = new DirectorEditingForm(this);
+                directorEditingForm.mode = 1;
+                directorEditingForm.Show();
             }
         }
     }

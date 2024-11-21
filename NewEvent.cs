@@ -24,9 +24,6 @@ namespace БД_Телестудии
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
             this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
-
         }
 
         private void addEventButton_Click(object sender, EventArgs e)
@@ -43,7 +40,8 @@ namespace БД_Телестудии
             {
                 AddNewEventCommand.Parameters["@broadcastID"].Value = editForm.broadcastID;
 
-                AddNewEventCommand.Parameters["@videoID"].Value = editForm.videoID;
+                DataRowView row = (DataRowView)videoComboBox.SelectedItem;
+                AddNewEventCommand.Parameters["@videoID"].Value = row.Row[0];
 
                 TimeSpan ts = TimeSpan.FromSeconds(startTimePicker.Value.Second
                     + startTimePicker.Value.Minute * 60 + startTimePicker.Value.Hour * 60 * 60);
@@ -97,8 +95,10 @@ namespace БД_Телестудии
 
                 UpdateVideoEditingSumDurationCommand.Parameters["@broadcastID"].Value = 
                     editForm.broadcastID;
-                UpdateVideoEditingSumDurationCommand.Parameters["@videoID"].Value = editForm.videoID;
                 UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value = 0;
+
+                UpdateVideoEditingSumDurationCommand.Parameters["@eventID"].Value =
+                   editForm.eventID;
 
                 sqlConnection1.Open();
 

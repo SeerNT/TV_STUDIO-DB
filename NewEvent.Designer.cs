@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.broadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.broadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter();
             this.videomaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.videomaterialTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.VideomaterialTableAdapter();
             this.addEventButton = new БД_Телестудии.RoundButton();
@@ -57,12 +56,14 @@
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.AddNewEventCommand = new System.Data.SqlClient.SqlCommand();
             this.UpdateVideoEditingSumDurationCommand = new System.Data.SqlClient.SqlCommand();
+            this.videomaterialBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.durationUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transitionDelayUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transitionDurationUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // бД_ТелестудииDataSet
@@ -74,10 +75,6 @@
             // 
             this.broadcastsPlaybackPlanBindingSource.DataMember = "BroadcastsPlaybackPlan";
             this.broadcastsPlaybackPlanBindingSource.DataSource = this.бД_ТелестудииDataSet;
-            // 
-            // broadcastsPlaybackPlanTableAdapter
-            // 
-            this.broadcastsPlaybackPlanTableAdapter.ClearBeforeFill = true;
             // 
             // videomaterialBindingSource
             // 
@@ -253,8 +250,8 @@
             // 
             // videoComboBox
             // 
-            this.videoComboBox.DataSource = this.broadcastsPlaybackPlanBindingSource;
-            this.videoComboBox.DisplayMember = "Трансляция";
+            this.videoComboBox.DataSource = this.videomaterialBindingSource1;
+            this.videoComboBox.DisplayMember = "Idea_description";
             this.videoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.videoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.videoComboBox.FormattingEnabled = true;
@@ -262,7 +259,7 @@
             this.videoComboBox.Name = "videoComboBox";
             this.videoComboBox.Size = new System.Drawing.Size(529, 24);
             this.videoComboBox.TabIndex = 60;
-            this.videoComboBox.ValueMember = "Трансляция";
+            this.videoComboBox.ValueMember = "Idea_description";
             // 
             // startTimePicker
             // 
@@ -346,8 +343,13 @@
             this.UpdateVideoEditingSumDurationCommand.Connection = this.sqlConnection1;
             this.UpdateVideoEditingSumDurationCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
             new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@videoID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@editingID", System.Data.SqlDbType.Int)});
+            // 
+            // videomaterialBindingSource1
+            // 
+            this.videomaterialBindingSource1.DataMember = "Videomaterial";
+            this.videomaterialBindingSource1.DataSource = this.бД_ТелестудииDataSet;
             // 
             // NewEvent
             // 
@@ -387,6 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.durationUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transitionDelayUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transitionDurationUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +424,6 @@
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private System.Data.SqlClient.SqlCommand AddNewEventCommand;
         private System.Data.SqlClient.SqlCommand UpdateVideoEditingSumDurationCommand;
+        private System.Windows.Forms.BindingSource videomaterialBindingSource1;
     }
 }
