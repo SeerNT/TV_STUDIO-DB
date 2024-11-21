@@ -23,8 +23,9 @@ namespace БД_Телестудии
             DataRowView row = (DataRowView)videomaterialComboBox.SelectedItem;
             Console.WriteLine(row.Row[0].ToString());
             ChangeVideomaterialPropsCommand.Parameters["@videoTitle"].Value = row.Row[0].ToString();
-            ChangeVideomaterialPropsCommand.Parameters["@newFramerate"].Value = framerateUpDown.Value;
-            ChangeVideomaterialPropsCommand.Parameters["@newAuthor"].Value = авторTextBox.Text;
+            ChangeVideomaterialPropsCommand.Parameters["@newFramerate"].Value = 
+                framerateNumericUpDown.Value;
+            ChangeVideomaterialPropsCommand.Parameters["@newAuthor"].Value = authorTextBox.Text;
 
             sqlConnection1.Open();
 
@@ -41,26 +42,13 @@ namespace БД_Телестудии
 
         private void VideomaterialProperty_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlan_DetailedTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan_Detailed);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
-            this.broadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.BroadcastsPlaybackPlan);
-
-        }
-
-        private void авторTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string Symbol = e.KeyChar.ToString();
-
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]|[.]").Success && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.VideoProps". При необходимости она может быть перемещена или удалена.
+            this.videoPropsTableAdapter.Fill(this.бД_ТелестудииDataSet.VideoProps);
         }
 
         private void framerateUpDown_ValueChanged(object sender, EventArgs e)
         {
-            if (framerateUpDown.Value > 360)
+            if (framerateNumericUpDown.Value > 360)
             {
                 MessageBox.Show(
                     "Кадровая частота не может превышать 360 кадров/с",
@@ -71,7 +59,7 @@ namespace БД_Телестудии
                     MessageBoxOptions.DefaultDesktopOnly
                 );
             }
-            else if (framerateUpDown.Value < 60)
+            else if (framerateNumericUpDown.Value < 60)
             {
                 MessageBox.Show(
                     "Кадровая частота не может быть меньше 60 кадров/с",
@@ -81,6 +69,16 @@ namespace БД_Телестудии
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.DefaultDesktopOnly
                 );
+            }
+        }
+
+        private void authorTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string Symbol = e.KeyChar.ToString();
+
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]|[.]").Success && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }
