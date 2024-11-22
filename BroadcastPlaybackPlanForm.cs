@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -59,15 +60,6 @@ namespace БД_Телестудии
             editorProgressForm.Show();
         }
 
-        private void propOpenButton_Click(object sender, EventArgs e)
-        {
-            if (videomaterialPropertyForm != null)
-                videomaterialPropertyForm.Close();
-
-            videomaterialPropertyForm = new VideomaterialProperty();
-            videomaterialPropertyForm.Show();
-        }
-
         private void broadcastsPlaybackPlanDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if(e.RowIndex != -1)
@@ -94,6 +86,38 @@ namespace БД_Телестудии
                     video_EditingBindingSource.Filter = "ID_Editing = " +
                         broadcastID;
                 } 
+            }
+        }
+
+        private void changePropButton_Click(object sender, EventArgs e)
+        {
+            ChangeVideomaterialPropsCommand.Parameters["@broadcastID"].Value =
+                broadcastID;
+            ChangeVideomaterialPropsCommand.Parameters["@newFramerate"].Value =
+                framerateNumericUpDown.Value;
+            ChangeVideomaterialPropsCommand.Parameters["@newAuthor"].Value = authorTextBox.Text;
+
+            sqlConnection1.Open();
+
+            ChangeVideomaterialPropsCommand.ExecuteNonQuery();
+            // закрыть соединение с БД
+            sqlConnection1.Close();
+
+            MessageBox.Show("Видеоматериал был изменен",
+                "Успешно", MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+            UpdateTable();
+        }
+
+        private void authorTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string Symbol = e.KeyChar.ToString();
+
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]|[.]").Success
+                && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
             }
         }
     }

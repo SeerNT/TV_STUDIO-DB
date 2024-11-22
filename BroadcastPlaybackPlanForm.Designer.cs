@@ -37,8 +37,6 @@
             this.videomaterialTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.VideomaterialTableAdapter();
             this.broadcastsPlaybackPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
-            this.openProgressButton = new БД_Телестудии.RoundButton();
-            this.propOpenButton = new БД_Телестудии.RoundButton();
             this.broadcastsPlaybackPlanTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter();
             this.broadcastsPlaybackPlanDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +52,11 @@
             this.video_EditingTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Video_EditingTableAdapter();
             this.durationLabel1 = new System.Windows.Forms.Label();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.framerateLabel1 = new System.Windows.Forms.Label();
-            this.authorLabel1 = new System.Windows.Forms.Label();
+            this.authorTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeVideomaterialPropsCommand = new System.Data.SqlClient.SqlCommand();
+            this.framerateNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.changePropButton = new БД_Телестудии.RoundButton();
+            this.openProgressButton = new БД_Телестудии.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_EditingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.framerateNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,44 +119,6 @@
             this.tableAdapterManager.Videomaterial_UsageTableAdapter = null;
             this.tableAdapterManager.VideomaterialTableAdapter = this.videomaterialTableAdapter;
             // 
-            // openProgressButton
-            // 
-            this.openProgressButton.BackgroundColor = System.Drawing.Color.SteelBlue;
-            this.openProgressButton.BorderColor = System.Drawing.Color.White;
-            this.openProgressButton.BorderWidth = 2F;
-            this.openProgressButton.ButtonText = "Прогресс монтажа";
-            this.openProgressButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openProgressButton.ForeColor = System.Drawing.Color.White;
-            this.openProgressButton.Location = new System.Drawing.Point(298, 350);
-            this.openProgressButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.openProgressButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
-            this.openProgressButton.Name = "openProgressButton";
-            this.openProgressButton.OnClickBackColor = System.Drawing.Color.LightSkyBlue;
-            this.openProgressButton.Radius = 10;
-            this.openProgressButton.Size = new System.Drawing.Size(238, 72);
-            this.openProgressButton.TabIndex = 14;
-            this.openProgressButton.UseMouseOverBackColor = true;
-            this.openProgressButton.Click += new System.EventHandler(this.openProgressButton_Click);
-            // 
-            // propOpenButton
-            // 
-            this.propOpenButton.BackgroundColor = System.Drawing.Color.SteelBlue;
-            this.propOpenButton.BorderColor = System.Drawing.Color.White;
-            this.propOpenButton.BorderWidth = 2F;
-            this.propOpenButton.ButtonText = "Характеристики видеоматериала";
-            this.propOpenButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.propOpenButton.ForeColor = System.Drawing.Color.White;
-            this.propOpenButton.Location = new System.Drawing.Point(27, 350);
-            this.propOpenButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.propOpenButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
-            this.propOpenButton.Name = "propOpenButton";
-            this.propOpenButton.OnClickBackColor = System.Drawing.Color.LightSkyBlue;
-            this.propOpenButton.Radius = 10;
-            this.propOpenButton.Size = new System.Drawing.Size(262, 84);
-            this.propOpenButton.TabIndex = 15;
-            this.propOpenButton.UseMouseOverBackColor = true;
-            this.propOpenButton.Click += new System.EventHandler(this.propOpenButton_Click);
-            // 
             // broadcastsPlaybackPlanTableAdapter
             // 
             this.broadcastsPlaybackPlanTableAdapter.ClearBeforeFill = true;
@@ -172,7 +136,7 @@
             this.broadcastsPlaybackPlanDataGridView.Location = new System.Drawing.Point(27, 71);
             this.broadcastsPlaybackPlanDataGridView.Name = "broadcastsPlaybackPlanDataGridView";
             this.broadcastsPlaybackPlanDataGridView.ReadOnly = true;
-            this.broadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(509, 272);
+            this.broadcastsPlaybackPlanDataGridView.Size = new System.Drawing.Size(509, 379);
             this.broadcastsPlaybackPlanDataGridView.TabIndex = 15;
             this.broadcastsPlaybackPlanDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.broadcastsPlaybackPlanDataGridView_CellMouseClick);
             this.broadcastsPlaybackPlanDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.broadcastsPlaybackPlanDataGridView_CellMouseDoubleClick);
@@ -283,34 +247,96 @@
     "rue;Pooling=False;Encrypt=True;TrustServerCertificate=True";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
-            // framerateLabel1
+            // authorTextBox
             // 
-            this.framerateLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Framerate", true));
-            this.framerateLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.framerateLabel1.Location = new System.Drawing.Point(555, 230);
-            this.framerateLabel1.Name = "framerateLabel1";
-            this.framerateLabel1.Size = new System.Drawing.Size(100, 23);
-            this.framerateLabel1.TabIndex = 23;
-            this.framerateLabel1.Text = "label6";
+            this.authorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Author", true));
+            this.authorTextBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorTextBox.Location = new System.Drawing.Point(558, 278);
+            this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.Size = new System.Drawing.Size(171, 26);
+            this.authorTextBox.TabIndex = 24;
+            this.authorTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.authorTextBox_KeyPress);
             // 
-            // authorLabel1
+            // ChangeVideomaterialPropsCommand
             // 
-            this.authorLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Author", true));
-            this.authorLabel1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authorLabel1.Location = new System.Drawing.Point(555, 292);
-            this.authorLabel1.Name = "authorLabel1";
-            this.authorLabel1.Size = new System.Drawing.Size(100, 23);
-            this.authorLabel1.TabIndex = 24;
-            this.authorLabel1.Text = "label6";
+            this.ChangeVideomaterialPropsCommand.CommandText = "ChangeVideomaterialProps";
+            this.ChangeVideomaterialPropsCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            this.ChangeVideomaterialPropsCommand.Connection = this.sqlConnection1;
+            this.ChangeVideomaterialPropsCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@newFramerate", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@newAuthor", System.Data.SqlDbType.VarChar)});
+            // 
+            // framerateNumericUpDown
+            // 
+            this.framerateNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.video_EditingBindingSource, "Framerate", true));
+            this.framerateNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.framerateNumericUpDown.Location = new System.Drawing.Point(558, 224);
+            this.framerateNumericUpDown.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.framerateNumericUpDown.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.framerateNumericUpDown.Name = "framerateNumericUpDown";
+            this.framerateNumericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.framerateNumericUpDown.TabIndex = 25;
+            this.framerateNumericUpDown.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // changePropButton
+            // 
+            this.changePropButton.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.changePropButton.BorderColor = System.Drawing.Color.White;
+            this.changePropButton.BorderWidth = 2F;
+            this.changePropButton.ButtonText = "Изменить характеристики";
+            this.changePropButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePropButton.ForeColor = System.Drawing.Color.White;
+            this.changePropButton.Location = new System.Drawing.Point(542, 310);
+            this.changePropButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.changePropButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
+            this.changePropButton.Name = "changePropButton";
+            this.changePropButton.OnClickBackColor = System.Drawing.Color.LightSkyBlue;
+            this.changePropButton.Radius = 10;
+            this.changePropButton.Size = new System.Drawing.Size(262, 84);
+            this.changePropButton.TabIndex = 15;
+            this.changePropButton.UseMouseOverBackColor = true;
+            this.changePropButton.Click += new System.EventHandler(this.changePropButton_Click);
+            // 
+            // openProgressButton
+            // 
+            this.openProgressButton.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.openProgressButton.BorderColor = System.Drawing.Color.White;
+            this.openProgressButton.BorderWidth = 2F;
+            this.openProgressButton.ButtonText = "Прогресс монтажа";
+            this.openProgressButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openProgressButton.ForeColor = System.Drawing.Color.White;
+            this.openProgressButton.Location = new System.Drawing.Point(542, 388);
+            this.openProgressButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.openProgressButton.MouseOverBorderColor = System.Drawing.Color.Cyan;
+            this.openProgressButton.Name = "openProgressButton";
+            this.openProgressButton.OnClickBackColor = System.Drawing.Color.LightSkyBlue;
+            this.openProgressButton.Radius = 10;
+            this.openProgressButton.Size = new System.Drawing.Size(261, 72);
+            this.openProgressButton.TabIndex = 14;
+            this.openProgressButton.UseMouseOverBackColor = true;
+            this.openProgressButton.Click += new System.EventHandler(this.openProgressButton_Click);
             // 
             // BroadcastPlaybackPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(801, 454);
-            this.Controls.Add(this.authorLabel1);
-            this.Controls.Add(this.framerateLabel1);
+            this.ClientSize = new System.Drawing.Size(835, 480);
+            this.Controls.Add(this.framerateNumericUpDown);
+            this.Controls.Add(this.authorTextBox);
             this.Controls.Add(this.durationLabel1);
             this.Controls.Add(this.iDLabel1);
             this.Controls.Add(this.label5);
@@ -318,7 +344,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.broadcastsPlaybackPlanDataGridView);
-            this.Controls.Add(this.propOpenButton);
+            this.Controls.Add(this.changePropButton);
             this.Controls.Add(this.openProgressButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -335,6 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_EditingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.framerateNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +378,7 @@
         private System.Windows.Forms.BindingSource broadcastsPlaybackPlanBindingSource;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private RoundButton openProgressButton;
-        private RoundButton propOpenButton;
+        private RoundButton changePropButton;
         private БД_ТелестудииDataSetTableAdapters.BroadcastsPlaybackPlanTableAdapter broadcastsPlaybackPlanTableAdapter;
         private System.Windows.Forms.DataGridView broadcastsPlaybackPlanDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -367,7 +394,8 @@
         private БД_ТелестудииDataSetTableAdapters.Video_EditingTableAdapter video_EditingTableAdapter;
         private System.Windows.Forms.Label durationLabel1;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private System.Windows.Forms.Label framerateLabel1;
-        private System.Windows.Forms.Label authorLabel1;
+        private System.Windows.Forms.TextBox authorTextBox;
+        private System.Data.SqlClient.SqlCommand ChangeVideomaterialPropsCommand;
+        private System.Windows.Forms.NumericUpDown framerateNumericUpDown;
     }
 }

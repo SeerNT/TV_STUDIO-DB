@@ -163,12 +163,6 @@
     <Compile Include="VideoEditingForm.Designer.cs">
       <DependentUpon>VideoEditingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideomaterialProperty.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VideomaterialProperty.Designer.cs">
-      <DependentUpon>VideomaterialProperty.cs</DependentUpon>
-    </Compile>
     <Compile Include="VideomaterialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,9 +239,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VideoEditingForm.resx">
       <DependentUpon>VideoEditingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VideomaterialProperty.resx">
-      <DependentUpon>VideomaterialProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VideomaterialsForm.resx">
       <DependentUpon>VideomaterialsForm.cs</DependentUpon>
