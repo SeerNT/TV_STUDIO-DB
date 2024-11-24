@@ -62,9 +62,9 @@
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 22);
+            this.label1.Size = new System.Drawing.Size(233, 22);
             this.label1.TabIndex = 14;
-            this.label1.Text = "План воспроизведения трансляций";
+            this.label1.Text = "Проведённые трансляции";
             // 
             // бД_ТелестудииDataSet
             // 

@@ -26,6 +26,8 @@ namespace БД_Телестудии
             this.broadcastTableAdapter.Fill(this.бД_ТелестудииDataSet.Broadcast);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
             this.manager_BroadcastsPlaybackPlanTableAdapter.Fill(this.бД_ТелестудииDataSet.Manager_BroadcastsPlaybackPlan);
+
+            manager_BroadcastsPlaybackPlanBindingSource.Filter = "[Дата воспроизведения] < '" + DateTime.Today.ToString() + "'";
         }
 
         private void sortButton_Click(object sender, EventArgs e)
