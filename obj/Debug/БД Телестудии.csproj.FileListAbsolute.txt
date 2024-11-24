@@ -29,4 +29,3 @@ K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Теле�
 K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.DirectorEditingForm.resources
 K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.NewEvent.resources
 K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.EditEvent.resources
-K:\Проекты\VS Projects\БД Телестудии\obj\Debug\БД_Телестудии.VideomaterialProperty.resources

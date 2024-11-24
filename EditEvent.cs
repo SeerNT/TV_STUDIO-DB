@@ -70,6 +70,9 @@ namespace БД_Телестудии
                 recSourceTextBox.Text = recSource;
             }
 
+            videoComboBox.SelectedIndex = videoComboBox.FindStringExact(
+                (string)GetEventInfoCommand.Parameters["@videoTitle"].Value);
+
             sqlConnection1.Close();
         }
 

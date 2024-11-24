@@ -16,7 +16,6 @@ namespace БД_Телестудии
     {
         public static string currentVideomaterialName;
         private EditorProgressForm editorProgressForm;
-        private VideomaterialProperty videomaterialPropertyForm;
 
         private int broadcastID;
 

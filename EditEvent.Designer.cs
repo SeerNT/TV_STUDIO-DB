@@ -348,7 +348,8 @@
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
             new System.Data.SqlClient.SqlParameter("@description", System.Data.SqlDbType.VarChar, 125, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar, 35, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
+            new System.Data.SqlClient.SqlParameter("@recSource", System.Data.SqlDbType.VarChar, 35, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
+            new System.Data.SqlClient.SqlParameter("@videoTitle", System.Data.SqlDbType.VarChar, 250, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
             // 
             // UpdateVideoEditingSumDurationCommand
             // 
