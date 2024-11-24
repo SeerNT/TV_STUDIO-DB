@@ -150,9 +150,6 @@ namespace БД_Телестудии
 
                 sqlConnection1.Open();
 
-                editForm.UpdateTable();
-                mainForm.UpdateTable();
-
                 ChangeEventCommand.ExecuteNonQuery();
 
                 UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value =
@@ -168,6 +165,8 @@ namespace БД_Телестудии
                         );
 
                 editForm.UpdateTable();
+                mainForm.UpdateTable();
+
                 this.Close();
             }
         }

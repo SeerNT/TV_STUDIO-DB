@@ -13,11 +13,13 @@ namespace БД_Телестудии
     public partial class NewEvent : Form
     {
         private VideoEditingForm editForm;
+        private BroadcastPlaybackPlanForm mainForm;
 
         public NewEvent(VideoEditingForm editForm)
         {
             InitializeComponent();
             this.editForm = editForm;
+            this.mainForm = editForm.mainForm;
         }
 
         private void NewEvent_Load(object sender, EventArgs e)
@@ -116,6 +118,8 @@ namespace БД_Телестудии
                         );
 
                 editForm.UpdateTable();
+                mainForm.UpdateTable();
+
                 this.Close();
             }
         }
