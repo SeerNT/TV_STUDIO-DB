@@ -21,6 +21,8 @@ namespace БД_Телестудии
 
         private short lastVideomaterialID;
 
+        private bool isLogOut = false;
+
         public FilmCrewForm()
         {
             InitializeComponent();
@@ -41,6 +43,8 @@ namespace БД_Телестудии
 
         private void FilmCrewForm_Load(object sender, EventArgs e)
         {
+            isLogOut = false;
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
             this.videomaterialTableAdapter.Fill(this.DB_TVStudioDataSet.Videomaterial);
 
@@ -50,7 +54,17 @@ namespace БД_Телестудии
 
         private void FilmCrewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!isLogOut)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                if (Program.openForms.All(f => f == null))
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,6 +107,16 @@ namespace БД_Телестудии
             }
 
             UpdateTable();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Program.authForm = new Authorization();
+            Program.authForm.Show();
+
+            isLogOut = true;
+
+            this.Close();
         }
     }
 }

@@ -58,6 +58,7 @@
             this.videoDescTextBox = new БД_Телестудии.RoundTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.addVideoButton = new БД_Телестудии.RoundButton();
+            this.logOutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DB_TVStudioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingNavigator)).BeginInit();
@@ -82,6 +83,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AuthTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BroadcastTableAdapter = null;
             this.tableAdapterManager.CategoryTableAdapter = null;
@@ -313,6 +315,7 @@
             this.videoDescTextBox.Radius = 10;
             this.videoDescTextBox.Size = new System.Drawing.Size(249, 77);
             this.videoDescTextBox.TabIndex = 11;
+            this.videoDescTextBox.UseSystemPasswordChar = false;
             // 
             // openFileDialog1
             // 
@@ -339,12 +342,23 @@
             this.addVideoButton.UseMouseOverBackColor = true;
             this.addVideoButton.Click += new System.EventHandler(this.addVideoButton_Click);
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(625, 286);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(111, 23);
+            this.logOutButton.TabIndex = 56;
+            this.logOutButton.Text = "Выйти из аккаунта";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // FilmCrewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(748, 320);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.addVideoButton);
             this.Controls.Add(this.label1);
@@ -400,5 +414,6 @@
         private System.Windows.Forms.DateTimePicker videoDateTimePicker;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

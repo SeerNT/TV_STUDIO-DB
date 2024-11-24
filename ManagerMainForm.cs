@@ -16,14 +16,27 @@ namespace БД_Телестудии
         private UserManagementForm userManagementForm;
         private Manager_BroadcastPlaybackPlanForm broadcastPlaybackPlanForm;
 
+        private bool isLogOut = false;
+
         public ManagerMainForm()
         {
             InitializeComponent();
+            isLogOut = false;
         }
 
         private void ManagerMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!isLogOut)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                if (Program.openForms.All(f => f == null))
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void openVideosFormButton_Click(object sender, EventArgs e)
@@ -51,6 +64,16 @@ namespace БД_Телестудии
 
             broadcastPlaybackPlanForm = new Manager_BroadcastPlaybackPlanForm();
             broadcastPlaybackPlanForm.Show();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Program.authForm = new Authorization();
+            Program.authForm.Show();
+
+            isLogOut = true;
+
+            this.Close();
         }
     }
 }

@@ -32,7 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreationStageForm));
             this.label2 = new System.Windows.Forms.Label();
             this.videoComboBox = new System.Windows.Forms.ComboBox();
+            this.videomaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.creation_StageBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.creation_StageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,23 +49,21 @@
             this.creation_StageBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.creation_StageDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creation_StageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.бД_ТелестудииDataSet = new БД_Телестудии.БД_ТелестудииDataSet();
             this.creation_StageTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.Creation_StageTableAdapter();
             this.tableAdapterManager = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.TableAdapterManager();
-            this.videomaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.videomaterialTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.VideomaterialTableAdapter();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.addStageCommand = new System.Data.SqlClient.SqlCommand();
             this.descTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addStageButton = new БД_Телестудии.RoundButton();
+            this.logOutButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.creation_StageBindingNavigator)).BeginInit();
             this.creation_StageBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.creation_StageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.creation_StageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creation_StageDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -88,6 +89,16 @@
             this.videoComboBox.TabIndex = 15;
             this.videoComboBox.ValueMember = "Idea_description";
             this.videoComboBox.SelectedIndexChanged += new System.EventHandler(this.videoComboBox_SelectedIndexChanged);
+            // 
+            // videomaterialBindingSource
+            // 
+            this.videomaterialBindingSource.DataMember = "Videomaterial";
+            this.videomaterialBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            // 
+            // бД_ТелестудииDataSet
+            // 
+            this.бД_ТелестудииDataSet.DataSetName = "БД_ТелестудииDataSet";
+            this.бД_ТелестудииDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // creation_StageBindingNavigator
             // 
@@ -117,6 +128,12 @@
             this.creation_StageBindingNavigator.Size = new System.Drawing.Size(701, 25);
             this.creation_StageBindingNavigator.TabIndex = 17;
             this.creation_StageBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // creation_StageBindingSource
+            // 
+            this.creation_StageBindingSource.DataMember = "Creation_Stage";
+            this.creation_StageBindingSource.DataSource = this.бД_ТелестудииDataSet;
+            this.creation_StageBindingSource.Filter = "ID_Videomaterial=1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -206,6 +223,7 @@
             // 
             // creation_StageDataGridView
             // 
+            this.creation_StageDataGridView.AllowUserToAddRows = false;
             this.creation_StageDataGridView.AutoGenerateColumns = false;
             this.creation_StageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.creation_StageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -223,17 +241,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 620;
             // 
-            // creation_StageBindingSource
-            // 
-            this.creation_StageBindingSource.DataMember = "Creation_Stage";
-            this.creation_StageBindingSource.DataSource = this.бД_ТелестудииDataSet;
-            this.creation_StageBindingSource.Filter = "ID_Videomaterial=1";
-            // 
-            // бД_ТелестудииDataSet
-            // 
-            this.бД_ТелестудииDataSet.DataSetName = "БД_ТелестудииDataSet";
-            this.бД_ТелестудииDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // creation_StageTableAdapter
             // 
             this.creation_StageTableAdapter.ClearBeforeFill = true;
@@ -250,11 +257,6 @@
             this.tableAdapterManager.Video_EditingTableAdapter = null;
             this.tableAdapterManager.Videomaterial_UsageTableAdapter = null;
             this.tableAdapterManager.VideomaterialTableAdapter = null;
-            // 
-            // videomaterialBindingSource
-            // 
-            this.videomaterialBindingSource.DataMember = "Videomaterial";
-            this.videomaterialBindingSource.DataSource = this.бД_ТелестудииDataSet;
             // 
             // videomaterialTableAdapter
             // 
@@ -313,12 +315,23 @@
             this.addStageButton.UseMouseOverBackColor = true;
             this.addStageButton.Click += new System.EventHandler(this.addStageButton_Click);
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(578, 413);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(111, 23);
+            this.logOutButton.TabIndex = 55;
+            this.logOutButton.Text = "Выйти из аккаунта";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // CreationStageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(701, 450);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.addStageButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.descTextBox);
@@ -333,13 +346,13 @@
             this.Text = "Структура программы";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreationStageForm_FormClosed);
             this.Load += new System.EventHandler(this.CreationStageForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.creation_StageBindingNavigator)).EndInit();
             this.creation_StageBindingNavigator.ResumeLayout(false);
             this.creation_StageBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.creation_StageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.creation_StageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creation_StageDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +387,6 @@
         private System.Windows.Forms.TextBox descTextBox;
         private System.Windows.Forms.Label label1;
         private RoundButton addStageButton;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

@@ -19,7 +19,7 @@ namespace БД_Телестудии
 
         private int broadcastID;
 
-
+        private bool isLogOut = false;
         public BroadcastPlaybackPlanForm()
         {
             InitializeComponent();
@@ -37,6 +37,7 @@ namespace БД_Телестудии
 
         private void BroadcastPlaybackPlanForm_Load(object sender, EventArgs e)
         {
+            isLogOut = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Video_Editing". При необходимости она может быть перемещена или удалена.
             this.video_EditingTableAdapter.Fill(this.бД_ТелестудииDataSet.Video_Editing);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.BroadcastsPlaybackPlan". При необходимости она может быть перемещена или удалена.
@@ -47,7 +48,17 @@ namespace БД_Телестудии
 
         private void BroadcastPlaybackPlanForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!isLogOut)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                if (Program.openForms.All(f => f == null))
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void openProgressButton_Click(object sender, EventArgs e)
@@ -118,6 +129,16 @@ namespace БД_Телестудии
             {
                 e.Handled = true;
             }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Program.authForm = new Authorization();
+            Program.authForm.Show();
+
+            isLogOut = true;
+
+            this.Close();
         }
     }
 }

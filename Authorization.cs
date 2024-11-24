@@ -126,7 +126,6 @@ namespace БД_Телестудии
 
         private void loginTextBox_KeyDown(object sender, KeyPressEventArgs e)
         {
-            Console.WriteLine(e.KeyChar);
             if (e.KeyChar == (char)Keys.Return)
             {
                 Auth();

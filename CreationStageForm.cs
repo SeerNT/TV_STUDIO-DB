@@ -14,6 +14,9 @@ namespace БД_Телестудии
     public partial class CreationStageForm : Form
     {
         private short lastStageID;
+
+        private bool isLogOut = false;
+
         public CreationStageForm()
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace БД_Телестудии
 
         private void CreationStageForm_Load(object sender, EventArgs e)
         {
+            isLogOut = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
             this.videomaterialTableAdapter.Fill(this.бД_ТелестудииDataSet.Videomaterial);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Creation_Stage". При необходимости она может быть перемещена или удалена.
@@ -45,7 +49,17 @@ namespace БД_Телестудии
 
         private void CreationStageForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!isLogOut)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                if (Program.openForms.All(f => f == null))
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void videoComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,6 +104,16 @@ namespace БД_Телестудии
                         MessageBoxOptions.DefaultDesktopOnly
                     );
             }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Program.authForm = new Authorization();
+            Program.authForm.Show();
+
+            isLogOut = true;
+
+            this.Close();
         }
     }
 }

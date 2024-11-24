@@ -32,6 +32,7 @@
             this.openAuthEditFormButton = new БД_Телестудии.RoundButton();
             this.openVideosFormButton = new БД_Телестудии.RoundButton();
             this.openBroadcastsFormButton = new БД_Телестудии.RoundButton();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -104,12 +105,23 @@
             this.openBroadcastsFormButton.UseMouseOverBackColor = true;
             this.openBroadcastsFormButton.Click += new System.EventHandler(this.openBroadcastsFormButton_Click);
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(12, 351);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(111, 23);
+            this.logOutButton.TabIndex = 14;
+            this.logOutButton.Text = "Выйти из аккаунта";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // ManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(540, 339);
+            this.ClientSize = new System.Drawing.Size(540, 386);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.openBroadcastsFormButton);
             this.Controls.Add(this.openVideosFormButton);
             this.Controls.Add(this.openAuthEditFormButton);
@@ -131,5 +143,6 @@
         private RoundButton openAuthEditFormButton;
         private RoundButton openVideosFormButton;
         private RoundButton openBroadcastsFormButton;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

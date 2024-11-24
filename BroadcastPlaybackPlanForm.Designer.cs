@@ -57,6 +57,7 @@
             this.framerateNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.changePropButton = new БД_Телестудии.RoundButton();
             this.openProgressButton = new БД_Телестудии.RoundButton();
+            this.logOutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бДТелестудииDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
@@ -329,12 +330,23 @@
             this.openProgressButton.UseMouseOverBackColor = true;
             this.openProgressButton.Click += new System.EventHandler(this.openProgressButton_Click);
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(712, 12);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(111, 23);
+            this.logOutButton.TabIndex = 54;
+            this.logOutButton.Text = "Выйти из аккаунта";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // BroadcastPlaybackPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(835, 480);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.framerateNumericUpDown);
             this.Controls.Add(this.authorTextBox);
             this.Controls.Add(this.durationLabel1);
@@ -397,5 +409,6 @@
         private System.Windows.Forms.TextBox authorTextBox;
         private System.Data.SqlClient.SqlCommand ChangeVideomaterialPropsCommand;
         private System.Windows.Forms.NumericUpDown framerateNumericUpDown;
+        private System.Windows.Forms.Button logOutButton;
     }
 }
