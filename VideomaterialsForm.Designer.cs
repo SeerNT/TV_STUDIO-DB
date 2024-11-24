@@ -222,6 +222,7 @@
             // ideaDescriptionTextBox
             // 
             this.ideaDescriptionTextBox.Location = new System.Drawing.Point(114, 344);
+            this.ideaDescriptionTextBox.MaxLength = 400;
             this.ideaDescriptionTextBox.Name = "ideaDescriptionTextBox";
             this.ideaDescriptionTextBox.Size = new System.Drawing.Size(445, 20);
             this.ideaDescriptionTextBox.TabIndex = 13;

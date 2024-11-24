@@ -145,6 +145,7 @@
             // channelTextBox
             // 
             this.channelTextBox.Location = new System.Drawing.Point(146, 289);
+            this.channelTextBox.MaxLength = 60;
             this.channelTextBox.Name = "channelTextBox";
             this.channelTextBox.Size = new System.Drawing.Size(223, 20);
             this.channelTextBox.TabIndex = 22;
@@ -212,6 +213,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 80;
             // 
             // dataGridViewTextBoxColumn3
@@ -219,6 +221,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Категория";
             this.dataGridViewTextBoxColumn3.HeaderText = "Категория";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 120;
             // 
             // dataGridViewTextBoxColumn4
@@ -226,6 +229,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Внешний канал";
             this.dataGridViewTextBoxColumn4.HeaderText = "Внешний канал";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 130;
             // 
             // dataGridViewTextBoxColumn6
@@ -233,6 +237,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Дата воспроизведения";
             this.dataGridViewTextBoxColumn6.HeaderText = "Дата воспроизведения";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 160;
             // 
             // Manager_BroadcastPlaybackPlanForm

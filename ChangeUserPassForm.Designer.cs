@@ -51,6 +51,7 @@
             this.passwordConfirmTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordConfirmTextBox.Location = new System.Drawing.Point(294, 167);
             this.passwordConfirmTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.passwordConfirmTextBox.MaxLength = 35;
             this.passwordConfirmTextBox.Name = "passwordConfirmTextBox";
             this.passwordConfirmTextBox.Radius = 10;
             this.passwordConfirmTextBox.Size = new System.Drawing.Size(242, 59);
@@ -100,6 +101,7 @@
             this.passwordTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.Location = new System.Drawing.Point(6, 167);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.passwordTextBox.MaxLength = 35;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Radius = 10;
             this.passwordTextBox.Size = new System.Drawing.Size(242, 59);
@@ -130,6 +132,7 @@
             this.loginTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginTextBox.Location = new System.Drawing.Point(6, 69);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.loginTextBox.MaxLength = 35;
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Radius = 10;
             this.loginTextBox.Size = new System.Drawing.Size(219, 59);

@@ -103,6 +103,7 @@
             // channelTextBox
             // 
             this.channelTextBox.Location = new System.Drawing.Point(16, 141);
+            this.channelTextBox.MaxLength = 55;
             this.channelTextBox.Name = "channelTextBox";
             this.channelTextBox.Size = new System.Drawing.Size(255, 20);
             this.channelTextBox.TabIndex = 9;

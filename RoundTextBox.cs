@@ -18,6 +18,7 @@ namespace БД_Телестудии
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]
         public override string Text { get => textBox2.Text; set => textBox2.Text = value; }
+        public int MaxLength { get => textBox2.MaxLength; set => textBox2.MaxLength = value; }
         public override Color ForeColor { get => textBox2.ForeColor; set => textBox2.ForeColor = value; }
         private Font _Font = UserControl.DefaultFont;
         [Description("Sets the font of the button caption")]

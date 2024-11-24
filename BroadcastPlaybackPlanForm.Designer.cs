@@ -253,6 +253,7 @@
             this.authorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.video_EditingBindingSource, "Author", true));
             this.authorTextBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authorTextBox.Location = new System.Drawing.Point(558, 278);
+            this.authorTextBox.MaxLength = 150;
             this.authorTextBox.Name = "authorTextBox";
             this.authorTextBox.Size = new System.Drawing.Size(171, 26);
             this.authorTextBox.TabIndex = 24;

@@ -136,6 +136,7 @@
             this.loginTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginTextBox.Location = new System.Drawing.Point(7, 68);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.loginTextBox.MaxLength = 35;
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Radius = 10;
             this.loginTextBox.Size = new System.Drawing.Size(168, 53);
