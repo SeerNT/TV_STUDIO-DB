@@ -159,6 +159,7 @@
             this.videoDateTimePicker.Name = "videoDateTimePicker";
             this.videoDateTimePicker.Size = new System.Drawing.Size(147, 20);
             this.videoDateTimePicker.TabIndex = 12;
+            this.videoDateTimePicker.ValueChanged += new System.EventHandler(this.videoDateTimePicker_ValueChanged);
             // 
             // label2
             // 

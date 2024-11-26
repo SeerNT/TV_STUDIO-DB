@@ -48,6 +48,8 @@ namespace БД_Телестудии
             // TODO: данная строка кода позволяет загрузить данные в таблицу "бД_ТелестудииDataSet.Videomaterial". При необходимости она может быть перемещена или удалена.
             this.videomaterialTableAdapter.Fill(this.DB_TVStudioDataSet.Videomaterial);
 
+            videoDateTimePicker.MaxDate = DateTime.Today;
+
             int lastRowNum = DB_TVStudioDataSet.Videomaterial.Rows.Count - 1;
             lastVideomaterialID = (short)DB_TVStudioDataSet.Videomaterial.Rows[lastRowNum].ItemArray[0];
         }
@@ -79,7 +81,7 @@ namespace БД_Телестудии
             videoDateTimePicker.Enabled = true;
             videoDescTextBox.Enabled = true;
 
-            fileDate = DateTime.Now;
+            fileDate = DateTime.Today;
             videoDateTimePicker.Value = fileDate;
 
             FileInfo videoFileInfo = new FileInfo(openFileDialog1.FileName);
@@ -96,14 +98,39 @@ namespace БД_Телестудии
 
         private void addVideoButton_Click(object sender, EventArgs e)
         {
-            if(videoDescTextBox.Text != null)
+            if(videoDescTextBox.Text != "")
             {
-                lastVideomaterialID++;
-                videomaterialTableAdapter.Insert((short)(lastVideomaterialID), videoDescTextBox.Text, fileDate);
-                MessageBox.Show("Видеоматериал добавлен",
-                    "Успешно", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-               );
+                if (videoDateTimePicker.Enabled)
+                {
+                    lastVideomaterialID++;
+                    videomaterialTableAdapter.Insert((short)(lastVideomaterialID), videoDescTextBox.Text, fileDate);
+                    MessageBox.Show("Видеоматериал добавлен",
+                        "Успешно", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                            "Должен быть загружен видеоматериал",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show(
+                            "Поле Описание должно быть заполнено",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
             }
 
             UpdateTable();
@@ -117,6 +144,11 @@ namespace БД_Телестудии
             isLogOut = true;
 
             this.Close();
+        }
+
+        private void videoDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            fileDate = (DateTime)videoDateTimePicker.Value;
         }
     }
 }

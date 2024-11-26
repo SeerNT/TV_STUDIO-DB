@@ -23,74 +23,104 @@ namespace БД_Телестудии
 
         private void addNewUserButton_Click(object sender, EventArgs e)
         {
-            if(passwordTextBox.Text == passwordConfirmTextBox.Text )
+            if(loginTextBox.Text != "")
             {
-                newUserCommand.Parameters["@login"].Value = loginTextBox.Text;
-                
-                newUserCommand.Parameters["@password"].Value = passwordConfirmTextBox.Text;
-
-                switch (userRoleComboBox.SelectedItem)
+                if (passwordTextBox.Text == passwordConfirmTextBox.Text)
                 {
-                    case "Менеджер":
-                        newUserCommand.Parameters["@role"].Value = "manager";
-                        break;
-                    case "Член съёмочной команды":
-                        newUserCommand.Parameters["@role"].Value = "crew";
-                        break;
-                    case "Режиссер":
-                        newUserCommand.Parameters["@role"].Value = "director";
-                        break;
-                    case "Продюсер":
-                        newUserCommand.Parameters["@role"].Value = "producer";
-                        break;
-                    case "Монтажер":
-                        newUserCommand.Parameters["@role"].Value = "edit";
-                        break;
-                }
+                    if (userRoleComboBox.Text != "")
+                    {
+                        newUserCommand.Parameters["@login"].Value = loginTextBox.Text;
 
-                // открыть соединение с БД
-                sqlConnection1.Open();
+                        newUserCommand.Parameters["@password"].Value = passwordConfirmTextBox.Text;
 
-                newUserCommand.ExecuteNonQuery();
-                // закрыть соединение с БД
-                sqlConnection1.Close();
+                        switch (userRoleComboBox.SelectedItem)
+                        {
+                            case "Менеджер":
+                                newUserCommand.Parameters["@role"].Value = "manager";
+                                break;
+                            case "Член съёмочной команды":
+                                newUserCommand.Parameters["@role"].Value = "crew";
+                                break;
+                            case "Режиссер":
+                                newUserCommand.Parameters["@role"].Value = "director";
+                                break;
+                            case "Продюсер":
+                                newUserCommand.Parameters["@role"].Value = "producer";
+                                break;
+                            case "Монтажер":
+                                newUserCommand.Parameters["@role"].Value = "edit";
+                                break;
+                        }
 
-                string result = (string)newUserCommand.Parameters["@res"].Value;
+                        // открыть соединение с БД
+                        sqlConnection1.Open();
 
-                if (result == "GOOD")
-                {
-                    MessageBox.Show("Новый пользователь был добавлен",
-                    "Успешно", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                    );
+                        newUserCommand.ExecuteNonQuery();
+                        // закрыть соединение с БД
+                        sqlConnection1.Close();
 
-                    manageForm.UpdateTable();
+                        string result = (string)newUserCommand.Parameters["@res"].Value;
 
-                    this.Close();
+                        if (result == "GOOD")
+                        {
+                            MessageBox.Show("Новый пользователь был добавлен",
+                            "Успешно", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                            );
+
+                            manageForm.UpdateTable();
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Пользователь с таким логином уже существует",
+                                "Ошибка",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error,
+                                MessageBoxDefaultButton.Button1,
+                                MessageBoxOptions.DefaultDesktopOnly
+                            );
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Роль не была выбрана",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
+                    }
+
                 }
                 else
                 {
                     MessageBox.Show(
-                        "Пользователь с таким логином уже существует",
-                        "Ошибка",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error,
-                        MessageBoxDefaultButton.Button1,
-                        MessageBoxOptions.DefaultDesktopOnly
-                    );
+                            "Пароли не совпадают",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
                 }
             }
             else
             {
                 MessageBox.Show(
-                        "Пароли не совпадают",
-                        "Ошибка",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error,
-                        MessageBoxDefaultButton.Button1,
-                        MessageBoxOptions.DefaultDesktopOnly
-                    );
+                            "Поле Логин должно быть заполнено",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
             }
+            
         }
     }
 }

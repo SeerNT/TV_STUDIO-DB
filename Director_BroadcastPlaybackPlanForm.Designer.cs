@@ -135,6 +135,8 @@
             // 
             // director_BroadcastsPlaybackPlanDataGridView
             // 
+            this.director_BroadcastsPlaybackPlanDataGridView.AllowUserToAddRows = false;
+            this.director_BroadcastsPlaybackPlanDataGridView.AllowUserToDeleteRows = false;
             this.director_BroadcastsPlaybackPlanDataGridView.AutoGenerateColumns = false;
             this.director_BroadcastsPlaybackPlanDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.director_BroadcastsPlaybackPlanDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
