@@ -326,7 +326,7 @@
             this.ChangeEventCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
             new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@startTime", System.Data.SqlDbType.Time),
-            new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Decimal),
             new System.Data.SqlClient.SqlParameter("@transitionType", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int),

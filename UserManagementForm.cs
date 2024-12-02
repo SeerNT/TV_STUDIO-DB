@@ -59,11 +59,17 @@ namespace БД_Телестудии
             changeUserRoleForm.Show();
         }
 
-        private void BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void deleteUserButton_Click(object sender, EventArgs e)
         {
+            authBindingSource.RemoveCurrent();
             this.Validate();
             this.authBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
+
+            MessageBox.Show("Пользователь был удалён!",
+                    "Успешно", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
         }
     }
 }

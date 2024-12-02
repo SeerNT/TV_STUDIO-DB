@@ -27,7 +27,6 @@ namespace БД_Телестудии
             this.Validate();
             this.creation_StageBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
-
         }
 
         public void UpdateTable()
@@ -114,6 +113,20 @@ namespace БД_Телестудии
             isLogOut = true;
 
             this.Close();
+        }
+
+        private void deleteBut_Click(object sender, EventArgs e)
+        {
+            creation_StageBindingSource.RemoveCurrent();
+
+            this.Validate();
+            this.creation_StageBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
+
+            MessageBox.Show("Этап был удалён!",
+                    "Успешно", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
         }
     }
 }

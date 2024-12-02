@@ -101,23 +101,37 @@ namespace БД_Телестудии
 
         private void changePropButton_Click(object sender, EventArgs e)
         {
-            ChangeVideomaterialPropsCommand.Parameters["@broadcastID"].Value =
+            if(authorTextBox.Text != "")
+            {
+                ChangeVideomaterialPropsCommand.Parameters["@broadcastID"].Value =
                 broadcastID;
-            ChangeVideomaterialPropsCommand.Parameters["@newFramerate"].Value =
-                framerateNumericUpDown.Value;
-            ChangeVideomaterialPropsCommand.Parameters["@newAuthor"].Value = authorTextBox.Text;
+                ChangeVideomaterialPropsCommand.Parameters["@newFramerate"].Value =
+                    framerateNumericUpDown.Value;
+                ChangeVideomaterialPropsCommand.Parameters["@newAuthor"].Value = authorTextBox.Text;
 
-            sqlConnection1.Open();
+                sqlConnection1.Open();
 
-            ChangeVideomaterialPropsCommand.ExecuteNonQuery();
-            // закрыть соединение с БД
-            sqlConnection1.Close();
+                ChangeVideomaterialPropsCommand.ExecuteNonQuery();
+                // закрыть соединение с БД
+                sqlConnection1.Close();
 
-            MessageBox.Show("Видеоматериал был изменен",
-                "Успешно", MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-                );
-            UpdateTable();
+                MessageBox.Show("Видеоматериал был изменен",
+                    "Успешно", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+                UpdateTable();
+            }
+            else
+            {
+                MessageBox.Show(
+                            "Поле Автор должно быть заполнено",
+                            "Ошибка",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly
+                        );
+            }
         }
 
         private void authorTextBox_KeyPress(object sender, KeyPressEventArgs e)

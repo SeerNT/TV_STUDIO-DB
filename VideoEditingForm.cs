@@ -15,7 +15,6 @@ namespace БД_Телестудии
         private NewEvent newEventForm;
         private EditEvent editEventForm;
         public int broadcastID;
-        //public int videoID;
         public int eventID;
         public TimeSpan baseTime;
         public int baseDuration;
@@ -44,16 +43,6 @@ namespace БД_Телестудии
 
             eventBindingSource.Filter = "ID_Broadcast = " + broadcastID;
             eventViewBindingSource.Filter = "ID_Broadcast = " + broadcastID;
-            
-            broadcastTitleLabel.Text = BroadcastPlaybackPlanForm.currentVideomaterialName;
-        }
-
-        private void eventBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.eventBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
-
         }
 
         private void OpenAddEventForm()
@@ -92,6 +81,20 @@ namespace БД_Телестудии
         private void eventBindingNavigator_Click(object sender, EventArgs e)
         {
             OpenAddEventForm();
+        }
+
+        private void deleteEventButton_Click(object sender, EventArgs e)
+        {
+            eventBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Событие было удалено!",
+                    "Успешно", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+
+            this.Validate();
+            this.eventBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.бД_ТелестудииDataSet);
         }
     }
 }

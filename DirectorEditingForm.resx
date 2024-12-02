@@ -147,9 +147,6 @@
   <metadata name="GetLastBroadcastIdCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>371, 54</value>
   </metadata>
-  <metadata name="AddBaseEventCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>583, 54</value>
-  </metadata>
   <metadata name="ChangeVideomaterialTitleCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>769, 54</value>
   </metadata>

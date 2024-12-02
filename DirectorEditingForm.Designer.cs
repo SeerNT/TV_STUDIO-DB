@@ -45,7 +45,6 @@
             this.GetIDsCommand = new System.Data.SqlClient.SqlCommand();
             this.AddNewBroadcastCommand = new System.Data.SqlClient.SqlCommand();
             this.GetLastBroadcastIdCommand = new System.Data.SqlClient.SqlCommand();
-            this.AddBaseEventCommand = new System.Data.SqlClient.SqlCommand();
             this.changeBroadcastButton = new БД_Телестудии.RoundButton();
             this.ChangeVideomaterialTitleCommand = new System.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
@@ -190,15 +189,6 @@
             this.GetLastBroadcastIdCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
             new System.Data.SqlClient.SqlParameter("@last_id", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
             // 
-            // AddBaseEventCommand
-            // 
-            this.AddBaseEventCommand.CommandText = "AddBaseEvent";
-            this.AddBaseEventCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            this.AddBaseEventCommand.Connection = this.sqlConnection1;
-            this.AddBaseEventCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
-            new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
-            new System.Data.SqlClient.SqlParameter("@videoTitle", System.Data.SqlDbType.VarChar)});
-            // 
             // changeBroadcastButton
             // 
             this.changeBroadcastButton.BackgroundColor = System.Drawing.Color.SteelBlue;
@@ -273,7 +263,6 @@
         private System.Data.SqlClient.SqlCommand GetIDsCommand;
         private System.Data.SqlClient.SqlCommand AddNewBroadcastCommand;
         private System.Data.SqlClient.SqlCommand GetLastBroadcastIdCommand;
-        private System.Data.SqlClient.SqlCommand AddBaseEventCommand;
         private System.Data.SqlClient.SqlCommand ChangeVideomaterialTitleCommand;
     }
 }

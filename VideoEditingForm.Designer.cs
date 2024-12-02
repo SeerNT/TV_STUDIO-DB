@@ -41,9 +41,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.broadcastTitleLabel = new System.Windows.Forms.Label();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.GetBroadcastAndVideoIDByTitleCommand = new System.Data.SqlClient.SqlCommand();
             this.AddEventButton = new System.Windows.Forms.Button();
             this.eventViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventViewTableAdapter = new БД_Телестудии.БД_ТелестудииDataSetTableAdapters.EventViewTableAdapter();
@@ -57,6 +55,7 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteEventButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).BeginInit();
@@ -94,6 +93,7 @@
             // eventDataGridView
             // 
             this.eventDataGridView.AllowUserToAddRows = false;
+            this.eventDataGridView.AllowUserToDeleteRows = false;
             this.eventDataGridView.AutoGenerateColumns = false;
             this.eventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -105,9 +105,9 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.eventDataGridView.DataSource = this.eventBindingSource;
-            this.eventDataGridView.Location = new System.Drawing.Point(12, 44);
+            this.eventDataGridView.Location = new System.Drawing.Point(12, 12);
             this.eventDataGridView.Name = "eventDataGridView";
-            this.eventDataGridView.Size = new System.Drawing.Size(896, 408);
+            this.eventDataGridView.Size = new System.Drawing.Size(896, 440);
             this.eventDataGridView.TabIndex = 17;
             this.eventDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.eventDataGridView_CellMouseDoubleClick);
             // 
@@ -159,31 +159,11 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 165;
             // 
-            // broadcastTitleLabel
-            // 
-            this.broadcastTitleLabel.AutoSize = true;
-            this.broadcastTitleLabel.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.broadcastTitleLabel.Location = new System.Drawing.Point(12, 8);
-            this.broadcastTitleLabel.Name = "broadcastTitleLabel";
-            this.broadcastTitleLabel.Size = new System.Drawing.Size(56, 18);
-            this.broadcastTitleLabel.TabIndex = 18;
-            this.broadcastTitleLabel.Text = "label1";
-            // 
             // sqlConnection1
             // 
             this.sqlConnection1.ConnectionString = "Data Source=DESKTOP-K054NBE;Initial Catalog=\"БД Телестудии\";Integrated Security=T" +
     "rue;Pooling=False;Encrypt=True;TrustServerCertificate=True";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
-            // GetBroadcastAndVideoIDByTitleCommand
-            // 
-            this.GetBroadcastAndVideoIDByTitleCommand.CommandText = "GetBroadcastAndVideoIDByTitle";
-            this.GetBroadcastAndVideoIDByTitleCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            this.GetBroadcastAndVideoIDByTitleCommand.Connection = this.sqlConnection1;
-            this.GetBroadcastAndVideoIDByTitleCommand.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
-            new System.Data.SqlClient.SqlParameter("@title", System.Data.SqlDbType.VarChar),
-            new System.Data.SqlClient.SqlParameter("@video_id", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.SqlClient.SqlParameter("@broadcast_id", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Output, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
             // 
             // AddEventButton
             // 
@@ -232,54 +212,74 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Event";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID_Event";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Start_time";
             this.dataGridViewTextBoxColumn2.HeaderText = "Start_time";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Playback_duration";
             this.dataGridViewTextBoxColumn3.HeaderText = "Playback_duration";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Transition_type";
             this.dataGridViewTextBoxColumn11.HeaderText = "Transition_type";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Recording_source";
             this.dataGridViewTextBoxColumn12.HeaderText = "Recording_source";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "Transition_duration";
             this.dataGridViewTextBoxColumn13.HeaderText = "Transition_duration";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "Delay_duration";
             this.dataGridViewTextBoxColumn14.HeaderText = "Delay_duration";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "Event_description";
             this.dataGridViewTextBoxColumn15.HeaderText = "Event_description";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "ID_Broadcast";
             this.dataGridViewTextBoxColumn16.HeaderText = "ID_Broadcast";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // deleteEventButton
+            // 
+            this.deleteEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteEventButton.Location = new System.Drawing.Point(214, 466);
+            this.deleteEventButton.Name = "deleteEventButton";
+            this.deleteEventButton.Size = new System.Drawing.Size(171, 53);
+            this.deleteEventButton.TabIndex = 20;
+            this.deleteEventButton.Text = "Удалить выбранное событие";
+            this.deleteEventButton.UseVisualStyleBackColor = true;
+            this.deleteEventButton.Click += new System.EventHandler(this.deleteEventButton_Click);
             // 
             // VideoEditingForm
             // 
@@ -287,9 +287,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(928, 527);
+            this.Controls.Add(this.deleteEventButton);
             this.Controls.Add(this.eventViewDataGridView);
             this.Controls.Add(this.AddEventButton);
-            this.Controls.Add(this.broadcastTitleLabel);
             this.Controls.Add(this.eventDataGridView);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -304,7 +304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventViewDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -314,9 +313,7 @@
         private БД_ТелестудииDataSetTableAdapters.EventTableAdapter eventTableAdapter;
         private БД_ТелестудииDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView eventDataGridView;
-        private System.Windows.Forms.Label broadcastTitleLabel;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private System.Data.SqlClient.SqlCommand GetBroadcastAndVideoIDByTitleCommand;
         private System.Windows.Forms.Button AddEventButton;
         private System.Windows.Forms.BindingSource eventViewBindingSource;
         private БД_ТелестудииDataSetTableAdapters.EventViewTableAdapter eventViewTableAdapter;
@@ -337,5 +334,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.Button deleteEventButton;
     }
 }

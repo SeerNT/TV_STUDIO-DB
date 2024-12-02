@@ -48,6 +48,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.videoComboBox = new System.Windows.Forms.ComboBox();
+            this.videomaterialBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.startTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.AddNewEventCommand = new System.Data.SqlClient.SqlCommand();
             this.UpdateVideoEditingSumDurationCommand = new System.Data.SqlClient.SqlCommand();
-            this.videomaterialBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.бД_ТелестудииDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.broadcastsPlaybackPlanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videomaterialBindingSource)).BeginInit();
@@ -261,6 +261,11 @@
             this.videoComboBox.TabIndex = 60;
             this.videoComboBox.ValueMember = "Idea_description";
             // 
+            // videomaterialBindingSource1
+            // 
+            this.videomaterialBindingSource1.DataMember = "Videomaterial";
+            this.videomaterialBindingSource1.DataSource = this.бД_ТелестудииDataSet;
+            // 
             // startTimePicker
             // 
             this.startTimePicker.CustomFormat = "hh:mm:ss";
@@ -328,7 +333,7 @@
             new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@videoID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@startTime", System.Data.SqlDbType.Time),
-            new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Int),
+            new System.Data.SqlClient.SqlParameter("@duration", System.Data.SqlDbType.Decimal),
             new System.Data.SqlClient.SqlParameter("@transitionType", System.Data.SqlDbType.VarChar),
             new System.Data.SqlClient.SqlParameter("@transitionDuration", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@transitionDelay", System.Data.SqlDbType.Int),
@@ -345,11 +350,6 @@
             new System.Data.SqlClient.SqlParameter("@broadcastID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@eventID", System.Data.SqlDbType.Int),
             new System.Data.SqlClient.SqlParameter("@editingID", System.Data.SqlDbType.Int)});
-            // 
-            // videomaterialBindingSource1
-            // 
-            this.videomaterialBindingSource1.DataMember = "Videomaterial";
-            this.videomaterialBindingSource1.DataSource = this.бД_ТелестудииDataSet;
             // 
             // NewEvent
             // 

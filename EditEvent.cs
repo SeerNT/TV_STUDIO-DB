@@ -149,7 +149,7 @@ namespace БД_Телестудии
                 ChangeEventCommand.Parameters["@videoID"].Value = row.Row[0].ToString();
 
                 sqlConnection1.Open();
-
+                
                 ChangeEventCommand.ExecuteNonQuery();
 
                 UpdateVideoEditingSumDurationCommand.Parameters["@editingID"].Value =
